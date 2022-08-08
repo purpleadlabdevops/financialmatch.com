@@ -13,9 +13,9 @@
             Get a Tax Credit Up to
             <span class="top__title-accented">$26,000</span> per W2 Employee
           </h1>
-          <h4 class="top__pre-title">
+          <h2 class="top__pre-title">
             Through the Employee Retention Tax Credit Program
-          </h4>
+          </h2>
           <ul class="top__list">
             <li>
               Qualify 1 of 3 Different Ways (Revenue Reduction, Shutdowns,
