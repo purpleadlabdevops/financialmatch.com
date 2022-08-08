@@ -222,6 +222,13 @@ export default {
       ) {
         this.step = this.step + 2
       }
+      if(this.step === 2 && this.quiz[this.step - 1].answer > 7){
+        EF.conversion({
+          offer_id: 1,
+          event_id: 3
+        })
+          .then(res => console.log(res))
+      }
     },
     stepBack() {
       this.step = this.step - 1
