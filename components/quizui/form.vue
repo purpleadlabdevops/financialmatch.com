@@ -38,13 +38,11 @@
         </svg>
       </h3>
       <div class="form-options" v-if="item.options === 'Number'">
-        <input
-          type="number"
-          min="1"
-          v-model="number"
-          placeholder="Enter number"
-          id="Employ QTA"
-        />
+        <select v-model="number">
+          <option disabled value="">Choose one</option>
+          <option :value="i" v-for="i in item.max">{{ i }}</option>
+          <option :value="+item.max + 1">{{ item.max + '+' }}</option>
+        </select>
         <div class="buttons">
           <button
             @click.prevent="chooseAnswer(number, i)"
@@ -133,7 +131,7 @@ export default {
   data() {
     return {
       step: 0,
-      number: null,
+      number: '',
       first_name: null,
       last_name: null,
       email: null,
@@ -148,6 +146,8 @@ export default {
         {
           question: 'How Many W2 Employees<br> Do You Have?',
           options: 'Number',
+          min: 1,
+          max: 100,
           answer: null,
         },
         {
@@ -222,7 +222,7 @@ export default {
       ) {
         this.step = this.step + 2
       }
-      if(this.step === 2 && this.quiz[this.step - 1].answer > 7){
+      if(this.step === 2 && this.quiz[this.step - 1].answer > 10){
         EF.conversion({
           offer_id: 1,
           event_id: 3
@@ -266,7 +266,7 @@ export default {
       }
 
       this.$store.commit('setResult', +this.quiz[1].answer)
-      if (this.quiz[0].answer === 'Yes' && this.quiz[1].answer > 1) {
+      if (this.quiz[0].answer === 'Yes' && this.quiz[1].answer > 1 ) {
         this.scripts = true
         this.submitScripts()
         sessionStorage.user = JSON.stringify(newUser)
@@ -442,7 +442,7 @@ export default {
       }
     }
   }
-  input {
+  input, select {
     display: block;
     margin: 0 auto;
     width: 450px;

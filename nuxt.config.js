@@ -22,17 +22,25 @@ export default {
     script: [
       {
         ssr: false,
-        async: true,
+        defer: true,
+        hid: 'everflow',
         src: 'https://www.f98mmtrk.com/scripts/sdk/everflow.js',
-      },
-      {
-        ssr: false,
-        src: '/js/everflow.js',
-      },
-      {
-        src: '/js/leadId.js',
-        body: true,
-        id: 'LeadiDscript',
+        callback: () => {
+          EF.click({
+            offer_id: 1,
+            affiliate_id: EF.urlParameter('affid'),
+            uid: EF.urlParameter('uid'),
+            source_id: EF.urlParameter('source_id'),
+          })
+          .then((res)=>{
+            setTimeout(()=>{
+              EF.conversion({
+                offer_id: 1,
+                event_id: 2,
+              })
+            }, 1000)
+          })
+        }
       },
     ],
   },
