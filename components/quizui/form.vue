@@ -293,6 +293,9 @@ export default {
         this.submitScripts()
         sessionStorage.user = JSON.stringify(newUser)
 
+        console.log(this.sub4, this.c1)
+        return
+
         this.$axios
           .get(
             `${api}/api/lead?firstname=${this.first_name}&lastname=${
