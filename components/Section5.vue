@@ -49,7 +49,7 @@
               No Collateral, Personal Guarantee or Credit Check
             </h4>
             <p class="section5__dscr-text">
-              Because this is a tax credit from the IRS< and not a loan, there
+              Because this is a tax credit from the IRS and not a loan, there
               is no collateral, personal guarantees or credit check required to
               receive the tax credit.
             </p>

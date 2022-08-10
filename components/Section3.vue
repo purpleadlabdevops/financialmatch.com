@@ -33,20 +33,13 @@
         </div>
         <div class="section3__grid-dscr-col">
           <h4 class="section3__grid-title">
-            Program Was Poorly Utilized and Understood (even by CPAs), so
-            Government Doubled-Down
+            Program Was Not Well Understood (even by many CPA’s), so Few Took Advantage
           </h4>
           <p class="section3__grid-text">
-            When few businesses took advantage of the program, the government
-            noticed and loosened the qualification rules substantially
+            The ERC Program has been amended which can help more businesses qualify.
           </p>
           <p class="section3__grid-text">
-            They
-            <span class="gold"
-              ><strong><u> want </u></strong></span
-            >
-            businesses to qualify and get paid. Unlike PPP, there are no limits
-            on how much you can receive.
+            Unlike PPP, there is no limit on max amount you can receive. ERC is getting more attention as business owners realize they can still take advantage.
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@
         <div class="section1__num-item">
           <div class="section1__num">CPA’s</div>
           <div class="section1__num-title">
-            Each account is overseen by a license CPA who provides full ERC
+            Each account is overseen by a licensed CPA who provides full ERC
             Audit protection
           </div>
         </div>

@@ -181,16 +181,22 @@ export default {
         },
       ],
       lead_source: null,
+      source: 'everflow',
       utm_source: '',
       utm_medium: '',
       utm_campaign: '',
       c1: '',
       c2: '',
       c3: '',
+      c4: '',
+      sub1: '',
+      sub2: '',
+      sub3: '',
+      sub4: '',
     }
   },
   mounted() {
-    this.lead_source = window.location.href
+    this.lead_source = window.location.origin
     if (this.$route.query.utm_source)
       this.utm_source = this.$route.query.utm_source
     if (this.$route.query.utm_medium)
@@ -200,6 +206,11 @@ export default {
     if (this.$route.query.c1) this.c1 = this.$route.query.c1
     if (this.$route.query.c2) this.c2 = this.$route.query.c2
     if (this.$route.query.c3) this.c3 = this.$route.query.c3
+    if (this.$route.query.c4) this.c4 = this.$route.query.c4
+    if (this.$route.query.sub1) this.sub1 = this.$route.query.sub1
+    if (this.$route.query.sub2) this.sub2 = this.$route.query.sub2
+    if (this.$route.query.sub3) this.sub3 = this.$route.query.sub3
+    if (this.$route.query.sub4) this.sub4 = this.$route.query.sub4
   },
   computed: {
     notQualify() {
@@ -222,12 +233,23 @@ export default {
       ) {
         this.step = this.step + 2
       }
-      if(this.step === 2 && this.quiz[this.step - 1].answer > 10){
+      // if 10 or more
+      if (this.step === 2 && this.quiz[this.step - 1].answer >= 10) {
         EF.conversion({
           offer_id: 1,
-          event_id: 3
-        })
-          .then(res => console.log(res))
+          event_id: 3,
+        }).then((res) => console.log(res))
+      }
+      // if 2-9
+      if (
+        this.step === 2 &&
+        this.quiz[this.step - 1].answer < 10 &&
+        this.quiz[this.step - 1].answer > 1
+      ) {
+        EF.conversion({
+          offer_id: 1,
+          event_id: 4,
+        }).then((res) => console.log(res))
       }
     },
     stepBack() {
@@ -266,7 +288,7 @@ export default {
       }
 
       this.$store.commit('setResult', +this.quiz[1].answer)
-      if (this.quiz[0].answer === 'Yes' && this.quiz[1].answer > 1 ) {
+      if (this.quiz[0].answer === 'Yes' && this.quiz[1].answer > 1) {
         this.scripts = true
         this.submitScripts()
         sessionStorage.user = JSON.stringify(newUser)
@@ -283,7 +305,13 @@ export default {
               this.utm_medium
             }&utm_campaign=${this.utm_campaign}&c1=${this.c1}&c2=${
               this.c2
-            }&c3=${this.c3}&ssid=${this.$refs.leadid_token.value}`
+            }&c3=${this.c3}&c4=${this.c4}&ssid=${
+              this.$refs.leadid_token.value
+            }&ef_aff=${this.c3}&ef_sub1=${this.sub1}&ef_sub2=${
+              this.sub2
+            }&ef_sub3=${this.sub3}&ef_sub4=${this.sub4}&ef_trans=${
+              this.c1
+            }&source=${this.source}`
           )
           .then((res) => {
             if (res.data.status === 'error') {
@@ -442,7 +470,8 @@ export default {
       }
     }
   }
-  input, select {
+  input,
+  select {
     display: block;
     margin: 0 auto;
     width: 450px;
