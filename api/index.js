@@ -48,6 +48,7 @@ app.get('/lead', (req, res) => {
         ef_sub3: req.query.ef_sub3,
         ef_sub4: req.query.ef_sub4,
         ef_trans: req.query.c1,
+        optinurl: req.query.optinurl,
         ...quizQuestions,
       }),
     },
