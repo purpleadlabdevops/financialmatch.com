@@ -233,24 +233,6 @@ export default {
       ) {
         this.step = this.step + 2
       }
-      // if 10 or more
-      if (this.step === 2 && this.quiz[this.step - 1].answer >= 10) {
-        EF.conversion({
-          offer_id: 1,
-          event_id: 3,
-        }).then((res) => console.log(res))
-      }
-      // if 2-9
-      if (
-        this.step === 2 &&
-        this.quiz[this.step - 1].answer < 10 &&
-        this.quiz[this.step - 1].answer > 1
-      ) {
-        EF.conversion({
-          offer_id: 1,
-          event_id: 4,
-        }).then((res) => console.log(res))
-      }
     },
     stepBack() {
       this.step = this.step - 1
@@ -293,9 +275,6 @@ export default {
         this.submitScripts()
         sessionStorage.user = JSON.stringify(newUser)
 
-        console.log(this.sub4, this.c1)
-        return
-
         this.$axios
           .get(
             `${api}/api/lead?firstname=${this.first_name}&lastname=${
@@ -324,9 +303,31 @@ export default {
                 offer_id: 1,
                 value: 1,
                 email: this.email,
-              }).then(() => {
-                this.$router.push('/thank-you')
               })
+                .then(() => {
+                  console.log('step 1')
+                  // if 10 or more
+                  if (this.quiz[this.step - 1].answer >= 10) {
+                    return EF.conversion({
+                      offer_id: 1,
+                      event_id: 3,
+                    })
+                  }
+                  // if 2-9
+                  if (
+                    this.quiz[this.step - 1].answer < 10 &&
+                    this.quiz[this.step - 1].answer > 1
+                  ) {
+                    return EF.conversion({
+                      offer_id: 1,
+                      event_id: 4,
+                    })
+                  }
+                })
+                .then(() => {
+                  console.log('step 2')
+                  this.$router.push('/thank-you')
+                })
             }
           })
       }
