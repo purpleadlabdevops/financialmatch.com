@@ -307,17 +307,14 @@ export default {
                 .then(() => {
                   console.log('step 1')
                   // if 10 or more
-                  if (this.quiz[this.step - 1].answer >= 10) {
+                  if (this.quiz[1].answer >= 10) {
                     return EF.conversion({
                       offer_id: 1,
                       event_id: 3,
                     })
                   }
                   // if 2-9
-                  if (
-                    this.quiz[this.step - 1].answer < 10 &&
-                    this.quiz[this.step - 1].answer > 1
-                  ) {
+                  if (this.quiz[1].answer < 10 && this.quiz[1].answer > 1) {
                     return EF.conversion({
                       offer_id: 1,
                       event_id: 4,
