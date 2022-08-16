@@ -9,7 +9,7 @@
       v-for="(item, i) in quiz"
       v-show="step === i && !notQualify"
     >
-      <h2 v-html="item.question"></h2>
+      <h2 class="form-question" v-html="item.question"></h2>
       <h3 v-if="step === 0">
         <svg
           width="17"
@@ -393,6 +393,9 @@ export default {
     text-align: center;
     color: #181818;
     margin-bottom: 10px;
+    @include xs {
+      margin-top: 0;
+    }
   }
   h3 {
     font-weight: 500;
@@ -468,6 +471,9 @@ export default {
         color: #fff;
         background: #fcd53f;
         box-shadow: 0px 4px 10px #c7d6ed, 0px -4px 0px #fbca38 inset;
+      }
+      @include xs {
+        height: 50px;
       }
     }
   }

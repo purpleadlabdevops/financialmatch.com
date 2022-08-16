@@ -45,6 +45,9 @@ export default {
 <style lang="scss">
 .top {
   padding: 20px 0 60px;
+  @include xs {
+    padding: 10px 0 60px;
+  }
 }
 .top__inner {
   display: flex;
@@ -80,6 +83,9 @@ export default {
   @include sm {
     font-size: 20px;
   }
+  @include xs {
+    font-size: 16px;
+  }
 }
 .top__title {
   font-size: 53px;
@@ -89,6 +95,10 @@ export default {
   @include sm {
     font-size: 42px;
     margin: 0.5em 0 0;
+  }
+  @include xs {
+    font-size: 26px;
+    margin-top: 0.1em;
   }
 }
 .top__title-accented {
@@ -135,6 +145,19 @@ export default {
       background-size: contain;
     }
   }
+  @include xs {
+    padding-left: 0;
+    li {
+      font-size: 16px;
+      padding-left: 30px;
+      margin: 10px 0;
+      line-height: 1.4;
+      &:before {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 }
 .top__action-row {
   color: $global_color_1;
@@ -150,6 +173,9 @@ export default {
       animation: bounce_h_3 3s infinite;
       transform: rotate(-90deg);
     }
+  }
+  @include xs {
+    font-size: 16px;
   }
 }
 @keyframes bounce_h_2 {

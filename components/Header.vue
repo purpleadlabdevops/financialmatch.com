@@ -19,10 +19,16 @@ export default {
 <style lang="scss">
 .main-header {
   padding: 20px 0;
+  @include xs {
+    padding: 10px 0;
+  }
 }
 .main-header__logo {
   max-width: 250px;
   margin: 0 auto;
+  @include sm {
+    max-width: 160px;
+  }
   img {
     height: auto;
     width: 100%;
