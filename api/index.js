@@ -11,7 +11,7 @@ app.get('/lead', (req, res) => {
   const data = JSON.parse(req.query.data)
   const quizQuestions = {}
   data.forEach((q, i) => {
-    quizQuestions[`data${i + 2}`] = q.answer
+    quizQuestions[q.id] = q.answer
   })
 
   request(
