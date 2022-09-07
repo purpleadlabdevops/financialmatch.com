@@ -3,7 +3,7 @@
     <div class="container">
       <h1 class="congrat__title">
         Congratulations! <br />
-        Based on your answers, you could qualify for {{ money }}
+        Based on your answers, you could qualify for <span v-if="money" style="filter: blur(5px);">{{ money }}</span>
       </h1>
       <svg
         width="102"
