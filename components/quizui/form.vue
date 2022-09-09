@@ -148,6 +148,7 @@ export default {
           question: 'I had W2 Employees in 2020 or 2021',
           options: ['Yes', 'No'],
           answer: null,
+          id: 'paid_w2_wages_20_21',
         },
         {
           question: 'How Many W2 Employees<br> Do You Have?',
@@ -155,23 +156,27 @@ export default {
           min: 1,
           max: 100,
           answer: null,
+          id: 'data3',
         },
         {
           question:
             'Did You Experience a Supply Chain Disruption<br> in 2020 or 2021?',
           options: ['Yes', 'No'],
           answer: null,
+          id: 'data4',
         },
         {
           question:
             'Did You Have a Decrease in Revenue in 2020 or 2021 compared to 2019?',
           options: ['Yes', 'No'],
           answer: null,
+          id: 'data5',
         },
         {
           question: 'Did You Receive PPP Money',
           options: ['Yes', 'No'],
           answer: null,
+          id: 'pppMoney',
         },
         {
           question: 'Who is Your Payroll Provider?',
@@ -184,6 +189,7 @@ export default {
             'Other/Don’t Know',
           ],
           answer: null,
+          id: 'payrollProvider',
         },
       ],
       lead_source: null,
@@ -586,6 +592,10 @@ export default {
         background: #75a7ef;
         color: #fff;
         box-shadow: 0px 4px 10px #c7d6ed, 0px -4px 0px #75a7ef inset;
+      }
+      &.disabled {
+        opacity: 0.5;
+        cursor: wait;
       }
     }
   }
