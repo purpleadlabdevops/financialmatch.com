@@ -269,6 +269,8 @@ export default {
     },
     submit() {
       this.spinner = true
+      this.$store.commit('setEmployees', this.quiz[1].answer)
+
       const api =
         process.env.NODE_ENV === 'production'
           ? `https://financialmatch.com`

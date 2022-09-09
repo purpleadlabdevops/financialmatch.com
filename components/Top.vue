@@ -4,6 +4,7 @@
       <ThanksMain v-if="route === 'index'" />
       <ThanksCur v-else-if="route === 'cur'" />
       <ThanksCall v-else-if="route === 'call'" />
+      <ThanksCal v-else-if="route === 'cal' && employees > 7" />
       <div class="top__inner" v-else>
         <div class="top__questions-col">
           <quizui-form class="top__quiz" />
@@ -31,6 +32,11 @@ export default {
   data(){
     return {
       route: null
+    }
+  },
+  computed: {
+    employees() {
+      return this.$store.state.employees
     }
   }
 }

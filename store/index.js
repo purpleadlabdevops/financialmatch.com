@@ -1,7 +1,8 @@
 export const state = () => ({
   index: 0,
   result: 0,
-  phone: '18558559365'
+  phone: '18558559365',
+  employees: 0
 })
 
 export const mutations = {
@@ -13,6 +14,9 @@ export const mutations = {
   },
   setPhone(state, phone) {
     state.phone = phone
+  },
+  setEmployees(state, employees) {
+    state.employees = employees
   }
 }
 
@@ -25,11 +29,15 @@ export const actions = {
   },
   getPhone({ commit }) {
     commit('setPhone', phone);
+  },
+  getEmployees({ commit }) {
+    commit('setEmployees', employees);
   }
 }
 
 export const getters = {
   index: state => state.index,
   result: state => state.result,
-  phone: state => state.phone
+  phone: state => state.phone,
+  employees: state => state.employees
 }
