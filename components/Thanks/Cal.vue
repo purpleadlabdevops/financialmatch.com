@@ -1,9 +1,9 @@
 <template>
   <div class="congrat">
-    <h1 class="congrat__title">Congrats on qualifying for the ERC program!</h1>
-    <p>Based on the information you submitted, we recommend you speak with an ERC Expert.</p>
+    <h1 class="congrat__title">Great News! <br> You Qualified for the ERC Program!</h1>
+    <p>Our ERC Experts will tell you exactly how much you can get. <br> Remember, there is no fee to sign up for our ERC filing service.</p>
     <h4 class="congrat__subtitle">
-      <b>Schedule your brief consultation call below:</b>
+      <b>Schedule your free call below:</b>
     </h4>
     <Calendly />
   </div>

@@ -1,7 +1,7 @@
 <template>
   <section id="quiz" class="top">
     <div class="container">
-      <ThanksMain v-if="route === 'index'" />
+      <ThanksMain v-if="route === 'index' || route === 'cal' && employees < 8" />
       <ThanksCur v-else-if="route === 'cur'" />
       <ThanksCall v-else-if="route === 'call'" />
       <ThanksCal v-else-if="route === 'cal' && employees > 7" />
