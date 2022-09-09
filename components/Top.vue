@@ -9,30 +9,16 @@
           <quizui-form class="top__quiz" />
         </div>
         <div class="top__title-col">
-          <h4 class="top__pre-title">
-            Most Business Owners Don’t Realize They Can Qualify To
-          </h4>
-          <h1 class="top__title">
-            Get a Tax Credit Up to
-            <span class="top__title-accented">$26,000</span> per W2 Employee
-          </h1>
-          <h2 class="top__pre-title">
-            Through the Employee Retention Tax Credit Program
-          </h2>
+          <h4 class="top__pre-title">Most Business Owners Don’t Realize They Can Qualify To</h4>
+          <h1 class="top__title">“Get <span class="top__title-accented">$26,000</span> Cash for Each W2 Employee</h1>
+          <h2 class="top__pre-title">Using the IRS’ ERC Program”</h2>
           <ul class="top__list">
-            <li>
-              Qualify 1 of 3 Different Ways (Revenue Reduction, Shutdowns,
-              Supply Chain Disruption)
-            </li>
-            <li>Get Fully Refundable ERC Tax Credit, Even If You Got PPP!</li>
-            <li>
-              100% Secure and Done for You by Lightning Fast Professionals.
-            </li>
+            <li>Qualify 1 of 3 Different Ways (Revenue Reduction, Shutdowns, Supply Chain Disruptions)</li>
+            <li>Get Money from the IRS, Even If You Got PPP</li>
+            <li>No Cap on Refund. Ie. a 50 Employee Business Can Get $1.3 Million!</li>
+            <li>No Up Front Fees. No Credit Check. Not a loan.</li>
           </ul>
-          <h4 class="top__action-row">
-            Take the 60sec Quiz to Find Out If You Qualify, and How Much You Can
-            Get
-          </h4>
+          <h4 class="top__action-row">Take the 60sec Quiz to Find Out If You Qualify, and How Much You Can Get</h4>
         </div>
       </div>
     </div>

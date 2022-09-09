@@ -178,19 +178,19 @@ export default {
           answer: null,
           id: 'pppMoney',
         },
-        {
-          question: 'Who is Your Payroll Provider?',
-          options: [
-            'Gusto',
-            'Paychex',
-            'ADP',
-            'Trinet',
-            'Quickbooks',
-            'Other/Don’t Know',
-          ],
-          answer: null,
-          id: 'payrollProvider',
-        },
+        // {
+        //   question: 'Who is Your Payroll Provider?',
+        //   options: [
+        //     'Gusto',
+        //     'Paychex',
+        //     'ADP',
+        //     'Trinet',
+        //     'Quickbooks',
+        //     'Other/Don’t Know',
+        //   ],
+        //   answer: null,
+        //   id: 'payrollProvider'
+        // }
       ],
       lead_source: null,
       source: 'everflow',
