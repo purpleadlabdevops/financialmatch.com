@@ -12,19 +12,16 @@
 <script>
 export default {
   name: 'Header',
-  data(){
-    return{
-      phone: '18558559365'
-    }
-  },
   filters: {
     number(tel){
       const newTel = tel.match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,4})/)
       return `(${newTel[2]}) ${newTel[3]}-${newTel[4]}`
     }
   },
-  mounted(){
-    if(this.$route.name === 'thank-you') this.phone = '18555852025'
+  computed: {
+    phone() {
+      return this.$store.state.phone
+    }
   }
 }
 </script>
@@ -38,13 +35,16 @@ export default {
   .container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    @media(min-width:768px){
+      align-items: center;
+    }
   }
   &__logo {
     width: 250px;
     display: block;
     @include sm {
-      max-width: 160px;
+      max-width: 140px;
     }
     img {
       height: auto;
@@ -52,23 +52,34 @@ export default {
     }
   }
   &__phone{
-    font-size: 18px;
+    display: block;
+    font-size: 12px;
     color: #000;
     text-decoration: none;
-    font-weight: 700;
-    border: 2px solid #106b70;
-    padding: 10px 20px;
+    border: 1px solid #106b70;
+    padding: 5px 8px;
     border-radius: 16px;
     display: block;
     line-height: 24px;
     display: flex;
-    vertical-align: center;
+    align-items: center;
     justify-content: space-between;
     transition: 1s ease-in-out;
+    white-space: nowrap;
+    @media(min-width:768px){
+      font-weight: 700;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-width: 2px;
+    }
     svg{
-      margin-right: 10px;
-      height: 24px;
+      margin-right: 5px;
+      height: 18px;
       width: auto;
+      @media(min-width:768px){
+        height: 24px;
+        margin-right: 10px;
+      }
       path{
         fill: #106b70;
       }

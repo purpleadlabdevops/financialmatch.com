@@ -2,6 +2,7 @@
   <main>
     <Top />
     <Section1 />
+    <!--    <With-video />-->
     <Section2 />
     <Section3 />
     <Section4 />
@@ -25,7 +26,7 @@ export default {
     ],
   },
   mounted(){
-    this.$store.commit('setPhone', '18558559365')
+    this.$store.commit('setPhone', '18555851843')
   }
 }
 </script>

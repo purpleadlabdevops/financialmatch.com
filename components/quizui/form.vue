@@ -107,7 +107,7 @@
         required
         id="phone"
       />
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" :disabled="spinner" />
     </div>
     <div class="step" v-if="notQualify">
       <h2>You Do Not Qualify for ERC</h2>
@@ -123,6 +123,11 @@
       name="universal_leadid"
       type="hidden"
     />
+    <div class="spinner" v-if="spinner">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" />
+      </svg>
+    </div>
   </form>
 </template>
 
@@ -130,6 +135,7 @@
 export default {
   data() {
     return {
+      spinner: false,
       step: 0,
       number: '',
       first_name: null,
@@ -256,6 +262,7 @@ export default {
       // })
     },
     submit() {
+      this.spinner = true
       const api =
         process.env.NODE_ENV === 'production'
           ? `https://financialmatch.com`
@@ -296,6 +303,7 @@ export default {
             }&source=${this.source}&optinurl=${window.location.href}`
           )
           .then((res) => {
+            this.spinner = false
             if (res.data.status === 'error') {
               this.$swal(res.data.msg)
             } else {
@@ -322,8 +330,14 @@ export default {
                   }
                 })
                 .then(() => {
-                  console.log('step 2')
-                  this.$router.push('/thank-you')
+                  this.$parent.route = this.$route.name
+                  // if(this.$route.name === 'call'){
+                  //   this.$parent.call = true
+                  // } else if(this.$route.name === 'cur') {
+                  //   this.$parent.cur = true
+                  // } else {
+                  //   this.$router.push('/thank-you')
+                  // }
                 })
             }
           })
@@ -360,6 +374,50 @@ export default {
       height: 30px;
     }
   }
+  .spinner {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    svg {
+      width: 50%;
+      max-width: 10rem;
+      animation: rotate 3.6s linear infinite;
+    }
+  }
+
+    circle {
+      fill: none;
+      stroke: #106b70;
+      stroke-width: 8px;
+      stroke-dasharray: 300;
+      animation: outline 2s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+    }
+
+    @keyframes outline {
+      0% {
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dashoffset: 300;
+      }
+      100% {
+        stroke-dashoffset: 600;
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0turn);
+      }
+      to {
+        transform: rotate(-1turn);
+      }
+    }
+
   &:before {
     content: '';
     background: rgba(255, 255, 255, 0.3);
@@ -516,6 +574,9 @@ export default {
       transition: 0.5s ease-in-out;
       @media (min-width: 768px) {
         height: 77px;
+      }
+      &:disabled{
+        opacity: .5;
       }
       &:hover {
         outline: 2px solid #59595a;

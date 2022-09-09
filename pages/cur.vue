@@ -2,7 +2,6 @@
   <main>
     <Top />
     <Section1 />
-    <!--    <With-video />-->
     <Section2 />
     <Section3 />
     <Section4 />
@@ -15,15 +14,18 @@
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'CurPage',
   head: {
     script: [
       {
         src: '/js/leadId.js',
         body: true,
-        id: 'LeadiDscript',
-      },
-    ],
+        id: 'LeadiDscript'
+      }
+    ]
   },
+  mounted(){
+    this.$store.commit('setPhone', '18555851306')
+  }
 }
 </script>

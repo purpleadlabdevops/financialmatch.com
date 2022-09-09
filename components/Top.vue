@@ -1,7 +1,10 @@
 <template>
   <section id="quiz" class="top">
     <div class="container">
-      <div class="top__inner">
+      <ThanksMain v-if="route === 'index'" />
+      <ThanksCur v-else-if="route === 'cur'" />
+      <ThanksCall v-else-if="route === 'call'" />
+      <div class="top__inner" v-else>
         <div class="top__questions-col">
           <quizui-form class="top__quiz" />
         </div>
@@ -39,6 +42,11 @@
 <script>
 export default {
   name: 'Top',
+  data(){
+    return {
+      route: null
+    }
+  }
 }
 </script>
 

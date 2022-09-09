@@ -14,6 +14,8 @@ app.get('/lead', (req, res) => {
     quizQuestions[`data${i + 2}`] = q.answer
   })
 
+const optinurl = process.env.NODE_ENV !== "production" ? 'https://financialmatch.com/' : req.query.optinurl
+
   request(
     {
       url: 'https://smb.leadbyte.com/restapi/v1.3/leads',
@@ -48,7 +50,7 @@ app.get('/lead', (req, res) => {
         ef_sub3: req.query.ef_sub3,
         ef_sub4: req.query.ef_sub4,
         ef_trans: req.query.c1,
-        optinurl: req.query.optinurl,
+        optinurl: optinurl,
         ...quizQuestions,
       }),
     },
