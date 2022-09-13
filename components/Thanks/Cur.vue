@@ -17,28 +17,17 @@
       />
     </svg>
     <h4 class="congrat__subtitle">
-      <b>Would you like that transferred into your account?</b>
+      <b>Yes! I would like to learn more, and get a check from the IRS with no upfront fees!</b>
     </h4>
-    <p>
-      Financial Match will call you within the next business day. Make sure
-      you answer the call or text. We will explain the ERC Program to you over
-      the phone and answer any questions.
-    </p>
-    <p>
-      You will be emailed a secure, encrypted link to upload a few easy
-      documents if you choose to use our services. We are experts at making
-      sure you qualify for the max ERC Credit allowed to you.
-    </p>
-    <p>
-      The ERC program has been amended several times. Make sure you take time
-      to gather the documents needed to approve your ERC Filing. It avoids
-      delays and allows us to tell you exactly how much you will get under the
-      ERC Program.
-    </p>
-    <p>
-      The ERC Program is still relatively unknown. We've included more info
-      about ourselves and the Program below:
-    </p>
+    <a class="congrat__phone" :href="`tel:${phone}`"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-2bb4da44=""><path d="M16.985 24.5C16.5115 24.5 16.1484 24.4684 15.8958 24.4051C13.6544 24.0254 11.1288 22.4274 8.31905 19.6111L5.05156 16.431C2.08399 13.5514 0.426562 11.0516 0.0792921 8.9315C-0.299548 6.40004 0.679121 3.94768 3.0153 1.57443C3.52042 1.00485 3.9624 0.6726 4.34124 0.57767C5.00421 0.38781 5.58825 0.546027 6.09337 1.05232L6.18808 1.14725L9.2188 5.03937C9.56607 5.67224 9.69235 6.226 9.59764 6.70065C9.31351 7.11201 9.01359 7.44426 8.69789 7.69741C7.71922 8.58342 7.27724 9.61183 7.37195 10.7826C7.46666 11.8269 7.956 12.6971 8.83996 13.3932L11.1604 15.7665C12.0443 16.6525 12.9441 17.0955 13.8596 17.0955C14.9961 17.1904 15.9906 16.6999 16.8429 15.6241C17.2218 15.2127 17.5533 14.9279 17.8374 14.7697C18.2794 14.5798 18.8003 14.6748 19.4001 15.0545L23.3779 18.0922C23.9146 18.6302 24.104 19.2156 23.9462 19.8484C23.8515 20.2598 23.5358 20.7344 22.9991 21.2724C21.1365 23.4241 19.1318 24.5 16.985 24.5Z" fill="#184895" data-v-2bb4da44=""></path></svg>{{ phone |number }}</a>
+    <p>Join the thousands of American small business owners who are taking advantage of the last pandemic stimulus program. Call the number above, or answer the call/text from your Financial Match Business Partner Expert.</p>
+    <p>We’re sure you have questions about the ERC Program. The first thought usually is this seems too good to be true. So let’s go over what happens and how you can claim your check.</p>
+    <p>First - We assign you an ERC filing expert from Financial Match. We want to talk with you over the phone so you know you’re dealing with a real company who has helped many skeptical business owners like yourself.</p>
+    <p>Your Business Partner will tell you more about the ERC Program. They will tell you exactly how much you could get. If you choose to use our filing service, we help you gather all the needed paperwork. It is sent to one of our experienced CPA’s who make sure everything looks right before we send it to the IRS for official filing. </p>
+    <p>We act as your liaison the entire way. We take absolutely zero fees until you get your money. Typically we will charge 15% of the overall credit amount. It’s a pretty nifty deal considering you do absolutely nothing for a potentially 6 or 7 figure check. This allows you to focus on running your business.</p>
+    <p>You’re probably thinking, why not just have my accountant file for me? Most accountants aren’t ERC filing Specialists. They also aren’t incentivized to get you the max ERC check amount. Think about it, your accountant gets paid the same amount whether they file for you or not. It’s in your best interest to use an ERC Program specialist who won’t work slow and can get you the max amount.</p>
+    <p>We look forward to serving you. Call the number below to get started in finding out exactly how much you can get.</p>
+    <a class="congrat__phone" :href="`tel:${phone}`"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-2bb4da44=""><path d="M16.985 24.5C16.5115 24.5 16.1484 24.4684 15.8958 24.4051C13.6544 24.0254 11.1288 22.4274 8.31905 19.6111L5.05156 16.431C2.08399 13.5514 0.426562 11.0516 0.0792921 8.9315C-0.299548 6.40004 0.679121 3.94768 3.0153 1.57443C3.52042 1.00485 3.9624 0.6726 4.34124 0.57767C5.00421 0.38781 5.58825 0.546027 6.09337 1.05232L6.18808 1.14725L9.2188 5.03937C9.56607 5.67224 9.69235 6.226 9.59764 6.70065C9.31351 7.11201 9.01359 7.44426 8.69789 7.69741C7.71922 8.58342 7.27724 9.61183 7.37195 10.7826C7.46666 11.8269 7.956 12.6971 8.83996 13.3932L11.1604 15.7665C12.0443 16.6525 12.9441 17.0955 13.8596 17.0955C14.9961 17.1904 15.9906 16.6999 16.8429 15.6241C17.2218 15.2127 17.5533 14.9279 17.8374 14.7697C18.2794 14.5798 18.8003 14.6748 19.4001 15.0545L23.3779 18.0922C23.9146 18.6302 24.104 19.2156 23.9462 19.8484C23.8515 20.2598 23.5358 20.7344 22.9991 21.2724C21.1365 23.4241 19.1318 24.5 16.985 24.5Z" fill="#184895" data-v-2bb4da44=""></path></svg>{{ phone |number }}</a>
   </div>
 </template>
 
@@ -50,7 +39,16 @@ export default {
         ? `$${this.$store.state.result * 26000}`
         : false
     },
+    phone() {
+      return this.$store.state.phone
+    }
   },
+  filters: {
+    number(tel){
+      const newTel = tel.match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,4})/)
+      return `(${newTel[2]}) ${newTel[3]}-${newTel[4]}`
+    }
+  }
 }
 </script>
 
@@ -60,15 +58,37 @@ export default {
   p {
     font-size: 18px;
   }
-}
-.congrat__title {
-  font-size: 40px;
-  color: $global_color_1;
-  @include sm {
-    font-size: 30px;
+  &__title {
+    font-size: 40px;
+    color: $global_color_1;
+    @include sm {
+      font-size: 30px;
+    }
   }
-}
-.congrat__subtitle {
-  font-size: 24px;
+  &__subtitle {
+    font-size: 24px;
+  }
+  &__phone {
+    background: #106b70;
+    display: block;
+    width: 300px;
+    margin: 15px auto;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    svg{
+      margin-right: 10px;
+    }
+    path{
+      fill: #fff;
+    }
+    &:hover{
+      opacity: .7;
+    }
+  }
 }
 </style>

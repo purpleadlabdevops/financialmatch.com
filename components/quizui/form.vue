@@ -237,6 +237,9 @@ export default {
   },
   methods: {
     chooseAnswer(a, i) {
+      if(this.$route.name === 'call' && i === 4){
+        this.$parent.route = this.$route.name
+      }
       this.quiz[i].answer = a
       this.step = this.step + 1
       if (
@@ -395,8 +398,6 @@ export default {
       max-width: 10rem;
       animation: rotate 3.6s linear infinite;
     }
-  }
-
     circle {
       fill: none;
       stroke: #106b70;
@@ -404,7 +405,7 @@ export default {
       stroke-dasharray: 300;
       animation: outline 2s cubic-bezier(0.77, 0, 0.18, 1) infinite;
     }
-
+  }
     @keyframes outline {
       0% {
         stroke-dashoffset: 0;
