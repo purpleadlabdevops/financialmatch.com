@@ -326,7 +326,7 @@ export default {
           })
           .then(res => {
             // if 5 or more
-            if (em > 5) {
+            if (em > 4) {
               return EF.conversion({
                 offer_id: 1,
                 event_id: 3

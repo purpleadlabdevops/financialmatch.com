@@ -6,6 +6,7 @@
           <img src="@/assets/img/logo-white.png" alt="logo" />
           <span>Employee Retention Tax Credit</span>
         </div>
+        <nuxt-link to="/privacy">Privacy Policy</nuxt-link>
         <div>All rights reserved</div>
       </div>
     </div>
@@ -21,19 +22,22 @@ export default {
 <style lang="scss">
 .main-footer {
   padding: 20px 0;
-}
-.main-footer__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.main-footer__logo {
-  max-width: 248px;
-  text-align: center;
-  margin-right: 30px;
-  img {
-    width: 100%;
-    height: auto;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    max-width: 248px;
+    text-align: center;
+    margin-right: 30px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  a{
+    color: #000;
   }
 }
 </style>
