@@ -259,107 +259,103 @@ export default {
         .split('')
       this.phone = arr.toString().replace(/[,]/g, '')
     },
-    submitScripts() {
-      // fbq('js', 'Purchase', {
-      //   value: 100,
-      //   currency: 'USD',
-      // })
-      // snaptr('js', 'view_content')
-      // snaptr('js', 'SIGN_UP')
-      // gtag('event', 'conversion', {
-      //   send_to: 'AW-10904855630/UFseCMKp3MQDEM7I688o',
-      // })
+    setUrl(object){
+      const api = process.env.NODE_ENV === 'production' ? `https://financialmatch.com` : `http://${process.env.API}`
+
+      let urlParams = ''
+      for(let item in object){
+        urlParams += `${item}=${encodeURIComponent(object[item])}&`;
+      }
+      urlParams = urlParams.slice(0, -1);
+      return `${api}/api/lead/?${urlParams}`
     },
     submit() {
+      const em = this.quiz[1].answer
       this.spinner = true
-      this.$store.commit('setEmployees', this.quiz[1].answer)
+      this.$store.commit('setResult', +em)
 
-      const api =
-        process.env.NODE_ENV === 'production'
-          ? `https://financialmatch.com`
-          : `http://${process.env.API}`
-      const newUser = {
-        first_name: this.first_name,
-        last_name: this.last_name,
-        email: this.email,
-        phone: this.phone,
-        company: this.company,
-        quiz: JSON.stringify(this.quiz),
-      }
+      if (this.quiz[0].answer === 'Yes' && em > 1) {
 
-      this.$store.commit('setResult', +this.quiz[1].answer)
-      if (this.quiz[0].answer === 'Yes' && this.quiz[1].answer > 1) {
-        this.scripts = true
-        this.submitScripts()
-        sessionStorage.user = JSON.stringify(newUser)
+        sessionStorage.user = JSON.stringify({
+          first_name: this.first_name,
+          last_name: this.last_name,
+          email: this.email,
+          phone: this.phone,
+          company: this.company,
+          quiz: JSON.stringify(this.quiz)
+        })
 
-        this.$axios
-          .get(
-            `${api}/api/lead?firstname=${this.first_name}&lastname=${
-              this.last_name
-            }&email=${this.email}&phone=${this.phone}&company=${
-              this.company
-            }&data=${JSON.stringify(this.quiz)}&lead_source=${
-              this.lead_source
-            }&utm_source=${this.utm_source}&utm_medium=${
-              this.utm_medium
-            }&utm_campaign=${this.utm_campaign}&c1=${this.c1}&c2=${
-              this.c2
-            }&c3=${this.c3}&c4=${this.c4}&ssid=${
-              this.$refs.leadid_token.value
-            }&ef_aff=${this.c3}&ef_sub1=${this.sub1}&ef_sub2=${
-              this.sub2
-            }&ef_sub3=${this.sub3}&ef_sub4=${this.sub4}&ef_trans=${
-              this.c1
-            }&source=${this.source}&optinurl=${window.location.href}`
-          )
-          .then((res) => {
+        const data = {
+          firstname: this.first_name,
+          lastname: this.last_name,
+          email: this.email,
+          phone: this.phone,
+          company: this.company,
+          data: JSON.stringify(this.quiz),
+          lead_source: this.lead_source,
+          utm_source: this.utm_source,
+          utm_medium: this.utm_medium,
+          utm_campaign: this.utm_campaign,
+          c1: this.c1,
+          c2: this.c2,
+          c3: this.c3,
+          c4: this.c4,
+          ssid: this.$refs.leadid_token.value,
+          ef_aff: this.c3,
+          ef_sub1: this.sub1,
+          ef_sub2: this.sub2,
+          ef_sub3: this.sub3,
+          ef_sub4: this.sub4,
+          ef_trans: this.c1,
+          source: this.source,
+          optinurl: window.location.href
+        }
+
+        this.$axios.get(this.setUrl(data))
+          .then(res => {
             this.spinner = false
             if (res.data.status === 'error') {
-              this.$swal(res.data.msg)
+              return this.$swal(res.data.msg)
             } else {
-              EF.conversion({
+              return EF.conversion({
                 offer_id: 1,
                 value: 1,
-                email: this.email,
+                email: this.email
               })
-                .then(() => {
-                  console.log('step 1')
-                  // if 10 or more
-                  if (this.quiz[1].answer >= 10) {
-                    return EF.conversion({
-                      offer_id: 1,
-                      event_id: 3,
-                    })
-                  }
-                  // if 2-9
-                  if (this.quiz[1].answer < 10 && this.quiz[1].answer > 1) {
-                    return EF.conversion({
-                      offer_id: 1,
-                      event_id: 4,
-                    })
-                  }
-                })
-                .then(() => {
-                  this.$parent.route = this.$route.name
-                  // if(this.$route.name === 'call'){
-                  //   this.$parent.call = true
-                  // } else if(this.$route.name === 'cur') {
-                  //   this.$parent.cur = true
-                  // } else {
-                  //   this.$router.push('/thank-you')
-                  // }
-                })
             }
           })
+          .then(res => {
+            // if 5 or more
+            if (em > 5) {
+              return EF.conversion({
+                offer_id: 1,
+                event_id: 3
+              })
+            }
+          })
+          .then(res => {
+            // if 2-4
+            if (em > 1 && em < 5) {
+              return EF.conversion({
+                offer_id: 1,
+                event_id: 4
+              })
+            }
+          })
+          .then(res => {
+            this.$parent.route = this.$route.name
+          })
+          .finally(() => {
+            this.spinner = true
+          })
       }
-    },
+    }
   },
   watch: {
     notQualify(val) {
       if (val) this.step = this.quiz.length
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -584,9 +580,6 @@ export default {
       @media (min-width: 768px) {
         height: 77px;
       }
-      &:disabled{
-        opacity: .5;
-      }
       &:hover {
         outline: 2px solid #59595a;
       }
@@ -596,7 +589,7 @@ export default {
         color: #fff;
         box-shadow: 0px 4px 10px #c7d6ed, 0px -4px 0px #75a7ef inset;
       }
-      &.disabled {
+      &.disabled, &:disabled {
         opacity: 0.5;
         cursor: wait;
       }

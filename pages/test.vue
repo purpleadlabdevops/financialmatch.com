@@ -1,6 +1,6 @@
 <template>
     <div>
-        <component v-for="item in arr" :is="`Thanks${item}`"></component>
+        <component v-for="item in arr" :key="item" :is="`Thanks${item}`"></component>
     </div>
 </template>
 <script>

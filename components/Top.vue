@@ -1,10 +1,10 @@
 <template>
   <section id="quiz" class="top">
     <div class="container">
-      <ThanksMain v-if="route === 'index' || route === 'cal' && employees < 8" />
+      <ThanksMain v-if="route === 'index' || route === 'cal' && result < 8" />
       <ThanksCur v-else-if="route === 'cur'" />
       <ThanksCall v-else-if="route === 'call'" />
-      <ThanksCal v-else-if="route === 'cal' && employees > 7" />
+      <ThanksCal v-else-if="route === 'cal' && result > 7" />
       <div class="top__inner" v-else>
         <div class="top__questions-col">
           <quizui-form class="top__quiz" />
@@ -35,8 +35,8 @@ export default {
     }
   },
   computed: {
-    employees() {
-      return this.$store.state.employees
+    result() {
+      return this.$store.state.result
     }
   }
 }
