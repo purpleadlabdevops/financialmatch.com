@@ -5,7 +5,7 @@
     <h4 class="congrat__subtitle">
       <b>Schedule your free call below:</b>
     </h4>
-    <CalendlyCal />
+    <CalendlyCalext />
   </div>
 </template>
 

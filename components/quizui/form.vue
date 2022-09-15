@@ -313,9 +313,8 @@ export default {
 
         this.$axios.get(this.setUrl(data))
           .then(res => {
-            this.spinner = false
             if (res.data.status === 'error') {
-              return this.$swal(res.data.msg)
+              throw res.data.msg
             } else {
               return EF.conversion({
                 offer_id: 1,
@@ -345,8 +344,14 @@ export default {
           .then(res => {
             this.$parent.route = this.$route.name
           })
+          .catch(err => {
+            console.log(this.spinner);
+            this.spinner = false
+            console.log(this.spinner);
+            this.$swal(err)
+          })
           .finally(() => {
-            this.spinner = true
+            this.spinner = false
           })
       }
     }
