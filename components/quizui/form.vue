@@ -342,6 +342,7 @@ export default {
             }
           })
           .then(res => {
+            console.log(this.$route.name);
             this.$parent.route = this.$route.name
           })
           .catch(err => {
