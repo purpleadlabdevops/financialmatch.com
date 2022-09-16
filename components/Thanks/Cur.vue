@@ -48,6 +48,9 @@ export default {
       const newTel = tel.match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,4})/)
       return `(${newTel[2]}) ${newTel[3]}-${newTel[4]}`
     }
+  },
+  mounted(){
+    window.scrollTo(0, 0)
   }
 }
 </script>

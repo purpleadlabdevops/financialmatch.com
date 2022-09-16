@@ -53,6 +53,7 @@ export default {
   },
   mounted(){
     this.timer()
+    window.scrollTo(0, 0)
   }
 }
 </script>
