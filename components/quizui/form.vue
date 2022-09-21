@@ -208,6 +208,11 @@ export default {
     }
   },
   mounted() {
+    document.onkeydown = e => {
+      if(e.keyCode === 13) {
+          this.submit()
+      }
+    }
     this.lead_source = window.location.origin
     if (this.$route.query.utm_source)
       this.utm_source = this.$route.query.utm_source
