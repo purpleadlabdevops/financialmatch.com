@@ -208,11 +208,6 @@ export default {
     }
   },
   mounted() {
-    document.onkeydown = e => {
-      if(e.keyCode === 13) {
-          this.submit()
-      }
-    }
     this.lead_source = window.location.origin
     if (this.$route.query.utm_source)
       this.utm_source = this.$route.query.utm_source
@@ -242,15 +237,16 @@ export default {
   },
   methods: {
     chooseAnswer(a, i) {
+      if(this.step === this.quiz.length){
+        this.submit()
+      } else {
+        this.quiz[i].answer = a
+        this.step = this.step + 1
+      }
       if(this.$route.name === 'call' && i === 4){
         this.$parent.route = this.$route.name
       }
-      this.quiz[i].answer = a
-      this.step = this.step + 1
-      if (
-        this.quiz[i].answer === 'No' &&
-        this.quiz[i].question !== 'Did You Receive PPP Money'
-      ) {
+      if (this.quiz[i].answer === 'No' && this.quiz[i].question !== 'Did You Receive PPP Money') {
         this.step = this.step + 2
       }
     },
