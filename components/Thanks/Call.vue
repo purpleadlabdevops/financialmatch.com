@@ -24,6 +24,35 @@
 </template>
 <script>
 export default {
+  head: {
+    script: [
+      {
+        ssr: false,
+        src: '/js/snap.js',
+        async: true,
+        hid: 'script_snaptr',
+        callback: () => {
+            snaptr('init', 'dbf21719-ebb7-43a4-a152-0b3ec1f7e0c1', {
+                'user_email': '__INSERT_USER_EMAIL__'
+            });
+            snaptr('track', 'SIGN_UP');
+        }
+      },
+      {
+        ssr: false,
+        src: 'https://www.googletagmanager.com/gtag/js?id=AW-10841851493',
+        async: true,
+        hid: 'script_gtag',
+        callback: () => {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10841851493');
+            gtag('event', 'conversion', {'send_to': 'AW-10841851493/LMvNCL7zwNEDEOWM5rEo'});
+        }
+      }
+    ]
+  },
   data() {
     return {
       time: 90
