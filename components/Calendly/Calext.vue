@@ -1,5 +1,5 @@
 <template>
-  <div class="calendly-inline-widget" data-url="https://calendly.com/aaron-empoyeecredit/erc-assistant"></div>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/erc-assistant/erc-assistant"></div>
 </template>
 <script>
 export default {
