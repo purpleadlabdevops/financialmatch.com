@@ -1,5 +1,5 @@
 <template>
-  <div class="calendly-inline-widget" data-url="https://calendly.com/financialmatch?hide_landing_page_details=1&hide_gdpr_banner=1"></div>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/financialmatcherc/2022?hide_landing_page_details=1&hide_gdpr_banner=1"></div>
 </template>
 <script>
 export default {

@@ -343,13 +343,9 @@ export default {
             }
           })
           .then(res => {
-            console.log(this.$route.name);
             this.$parent.route = this.$route.name
           })
           .catch(err => {
-            console.log(this.spinner);
-            this.spinner = false
-            console.log(this.spinner);
             this.$swal(err)
           })
           .finally(() => {
