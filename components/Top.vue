@@ -3,7 +3,8 @@
     <div class="container">
       <ThanksMain v-if="route === 'index' || route === 'cal' && result < 8 || route === 'calext' && result < 8" />
       <ThanksCur v-else-if="route === 'cur'" />
-      <ThanksCall v-else-if="route === 'call'" />
+      <ThanksCall v-else-if="route === 'call' && result > 4" />
+      <h2 v-else-if="route === 'call' && result < 5">Unfortunately, based on your answers it appears we can not help you at this time.</h2>
       <ThanksCal v-else-if="route === 'cal' && result > 7" />
       <ThanksCalext v-else-if="route === 'calext' && result > 7" />
       <div class="top__inner" v-else>

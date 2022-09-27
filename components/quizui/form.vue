@@ -111,10 +111,7 @@
     </div>
     <div class="step" v-if="notQualify">
       <h2>You Do Not Qualify for ERC</h2>
-      <p>
-        Unfortunately based on your answers, it appears that you do not qualify
-        for the Employee Retention Tax Credit program.
-      </p>
+      <p>Unfortunately, based on your answers it appears we can not help you at this time.</p>
     </div>
 
     <input
@@ -177,20 +174,7 @@ export default {
           options: ['Yes', 'No'],
           answer: null,
           id: 'pppMoney',
-        },
-        // {
-        //   question: 'Who is Your Payroll Provider?',
-        //   options: [
-        //     'Gusto',
-        //     'Paychex',
-        //     'ADP',
-        //     'Trinet',
-        //     'Quickbooks',
-        //     'Other/Don’t Know',
-        //   ],
-        //   answer: null,
-        //   id: 'payrollProvider'
-        // }
+        }
       ],
       lead_source: null,
       source: 'everflow',
@@ -243,8 +227,9 @@ export default {
         this.quiz[i].answer = a
         this.step = this.step + 1
       }
-      if(this.$route.name === 'call' && i === 4){
+      if(this.$route.name === 'call' && i === this.quiz.length - 1){
         this.$parent.route = this.$route.name
+        this.$store.commit('setResult', this.quiz[1].answer)
       }
       if (this.quiz[i].answer === 'No' && this.quiz[i].question !== 'Did You Receive PPP Money') {
         this.step = this.step + 2

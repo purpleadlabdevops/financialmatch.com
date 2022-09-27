@@ -1,10 +1,6 @@
 <template>
   <div class="gn">
-    <h2>
-      Great News! <br>
-      The ERC Program is Still Open, <br>
-      and Your Business Qualifies For It!
-    </h2>
+    <h2>You may qualify for up to {{ money | format }}</h2>
     <ul>
       <li>There is No Wait or Hold Time To Speak With Our ERC Filing Expert</li>
       <li>Find Out Exactly How Much You Can Get From the IRS</li>
@@ -70,6 +66,7 @@ export default {
     }
   },
   filters: {
+    format: rangep => `${rangep}`.replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1,'),
     number(tel){
       const newTel = tel.match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,4})/)
       return `(${newTel[2]}) ${newTel[3]}-${newTel[4]}`
@@ -78,6 +75,14 @@ export default {
   computed: {
     phone() {
       return this.$store.state.phone
+    },
+    result() {
+      return this.$store.state.result
+    },
+    money() {
+      return this.$store.state.result > 1
+        ? `$${this.$store.state.result * 26000}`
+        : false
     }
   },
   mounted(){
@@ -94,17 +99,21 @@ export default {
   text-align: center;
   h2 {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 19px;
     color: #000;
     line-height: 1.2;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     @media(min-width:768px){
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    @media(min-width:992px){
       font-size: 34px;
     }
   }
   ul {
     padding: 0;
-    margin: 0 auto 30px;
+    margin: 0 auto 5px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
@@ -114,23 +123,33 @@ export default {
     max-width: 430px;
     @media (min-width: 768px) {
       font-size: 20px;
+      margin: 0 auto 30px;
     }
     &.list{
       margin: 15px auto 0px;
-      font-size: 14px;
+      font-size: 12px;
       color: #000;
       max-width: 260px;
+      @media (min-width: 768px) {
+        font-size: 14px;
+      }
     }
     li{
       &:not(:first-child){
-        margin-top: 10px;
+        margin-top: 4px;
+        @media (min-width: 768px) {
+          margin-top: 10px;
+        }
       }
     }
   }
   .timer {
-    margin-bottom: 10px;
-    @media(min-width:576px){
+    margin-bottom: 5px;
+    height: auto;
+    width: 30px;
+    @media(min-width:768px){
       margin-bottom: 30px;
+      width: 55px;
     }
   }
   b {
