@@ -18,7 +18,35 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       { name: "facebook-domain-verification", content: "kiopg5rxifn74adikb3gbcqtbnreck" }
     ],
-    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    script: [
+      {
+        ssr: false,
+        defer: true,
+        hid: 'everflow',
+        src: 'https://www.f98mmtrk.com/scripts/sdk/everflow.js',
+        callback: () => {
+          EF.click({
+            offer_id: 1,
+            affiliate_id: EF.urlParameter('affid'),
+            uid: EF.urlParameter('uid'),
+            source_id: EF.urlParameter('source_id')
+          })
+            .then(res => {
+              console.dir(res)
+              setTimeout(()=>{
+                EF.conversion({
+                  offer_id: 1,
+                  event_id: 2
+                })
+                  .then(res => {
+                    console.dir(res)
+                  })
+              }, 500);
+            })
+        }
+      }
+    ]
   },
   styleResources: {
     scss: ['styles/_mixins.scss', 'styles/_vars.scss'],

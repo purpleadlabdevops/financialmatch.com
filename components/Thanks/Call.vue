@@ -14,7 +14,7 @@
     <p class="text-timer">
       This Spot Will Be Available for <b>{{ time }} Seconds</b>
     </p>
-    <a :href="`tel:${phone}`">{{phone | number}}</a>
+    <a @click="setCall" :href="`tel:${phone}`">{{phone | number}}</a>
     <p>Thousands of People Have Called, Received Checks Directly from the IRS, and Got Approved for the ERC Program - The Last Stimulus Plan Available to Business Owners Under the CARES Act</p>
   </div>
 </template>
@@ -57,8 +57,15 @@ export default {
   methods: {
     setCall() {
       EF.conversion({
-        offer_id: 1
+        offer_id: 1,
+        event_id: 10
       })
+        .then(res => {
+          console.dir(res)
+          return EF.conversion({
+            offer_id: 1
+          })
+        })
         .then(res => {
           console.dir(res)
         })

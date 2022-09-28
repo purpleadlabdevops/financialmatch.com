@@ -30,8 +30,15 @@ export default {
   methods: {
     setCall() {
       EF.conversion({
-        offer_id: 1
+        offer_id: 1,
+        event_id: 10
       })
+        .then(res => {
+          console.dir(res)
+          return EF.conversion({
+            offer_id: 1
+          })
+        })
         .then(res => {
           console.dir(res)
         })

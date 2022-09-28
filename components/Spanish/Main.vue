@@ -1,8 +1,8 @@
 <template>
   <div class="congrat">
     <h1 class="congrat__title">
-      Congratulations! <br />
-      Based on your answers, you could qualify for <span v-if="money">{{ money }}</span>
+      ¡Felicidades! <br />
+      Según sus respuestas, ¡podría calificar para recibir <span v-if="money">{{ money }}</span>!
     </h1>
     <svg
       width="102"
@@ -17,28 +17,12 @@
       />
     </svg>
     <h4 class="congrat__subtitle">
-      <b>Would you like that transferred into your account?</b>
+      <b>¿Le gustaría que se transfiriera a su cuenta?</b>
     </h4>
-    <p>
-      Financial Match will call you within the next business day. Make sure
-      you answer the call or text. We will explain the ERC Program to you over
-      the phone and answer any questions.
-    </p>
-    <p>
-      You will be emailed a secure, encrypted link to upload a few easy
-      documents if you choose to use our services. We are experts at making
-      sure you qualify for the max ERC Credit allowed to you.
-    </p>
-    <p>
-      The ERC program has been amended several times. Make sure you take time
-      to gather the documents needed to approve your ERC Filing. It avoids
-      delays and allows us to tell you exactly how much you will get under the
-      ERC Program.
-    </p>
-    <p>
-      The ERC Program is still relatively unknown. We've included more info
-      about ourselves and the Program below:
-    </p>
+    <p>Financial Match lo llamará dentro del siguiente día hábil. Asegúrese de contestar la llamada o el mensaje de texto. Le explicaremos el Programa ERC por teléfono y responderemos cualquier pregunta.</p>
+    <p>Se le enviará por correo electrónico un enlace seguro y encriptado para cargar algunos documentos sencillos, si elige utilizar nuestros servicios. Somos expertos en asegurarnos de que califique para el máximo crédito ERC permitido para usted.</p>
+    <p>El programa ERC ha sido modificado varias veces. Asegúrese de tomarse el tiempo para reunir los documentos necesarios para aprobar su tramitación del ERC. Esto evita demoras y nos permite decirle exactamente cuánto obtendrá con el Programa ERC.</p>
+    <p>El Programa ERC es todavía relativamente desconocido. Hemos incluido más información sobre nosotros y el programa a continuación:</p>
   </div>
 </template>
 

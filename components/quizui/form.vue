@@ -302,32 +302,29 @@ export default {
             if (res.data.status === 'error') {
               throw res.data.msg
             } else {
-              return EF.conversion({
-                offer_id: 1,
-                value: 1,
-                email: this.email
-              })
+              if(em > 4) {
+                return EF.conversion({
+                  offer_id: 1,
+                  event_id: 3
+                })
+                  .then(res => {
+                    console.dir(res)
+                    return EF.conversion({
+                      offer_id: 1,
+                      value: 1,
+                      email: this.email
+                    })
+                  })
+              } else {
+                return EF.conversion({
+                  offer_id: 1,
+                  event_id: 4
+                })
+              }
             }
           })
           .then(res => {
-            // if 5 or more
-            if (em > 4) {
-              return EF.conversion({
-                offer_id: 1,
-                event_id: 3
-              })
-            }
-          })
-          .then(res => {
-            // if 2-4
-            if (em > 1 && em < 5) {
-              return EF.conversion({
-                offer_id: 1,
-                event_id: 4
-              })
-            }
-          })
-          .then(res => {
+            console.dir(res)
             this.$parent.route = this.$route.name
           })
           .catch(err => {
