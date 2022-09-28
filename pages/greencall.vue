@@ -13,37 +13,25 @@
         script: [
           {
             ssr: false,
-            hid: "everflow",
             defer: true,
-            src: 'https://www.bls29trk.com/scripts/sdk/everflow.js',
+            hid: 'everflow',
+            src: 'https://www.f98mmtrk.com/scripts/sdk/everflow.js',
             callback: () => {
               EF.click({
-                offer_id: 135,
-                affiliate_id: EF.urlParameter("affid"),
-                sub1: EF.urlParameter("sub1"),
-                sub2: EF.urlParameter("sub2"),
-                sub3: EF.urlParameter("sub3"),
-                sub4: EF.urlParameter("sub4"),
-                sub5: EF.urlParameter("sub5"),
-                uid: EF.urlParameter("uid"),
-                source_id: EF.urlParameter("source_id"),
-                transaction_id: EF.urlParameter("_ef_transaction_id")
+                offer_id: 1,
+                affiliate_id: EF.urlParameter('affid'),
+                uid: EF.urlParameter('uid'),
+                source_id: EF.urlParameter('source_id')
               })
                 .then(res => {
-                  console.dir(res);
                   EF.conversion({
-                    offer_id: 135,
-                    event_id: 254
+                    offer_id: 1,
+                    event_id: 2
                   })
                 })
             }
           }
         ]
-      }
-    },
-    mounted(){
-      if(this.$route.query.sub1){
-        this.$store.dispatch('affiliates/getSub', this.$route.query)
       }
     }
   }

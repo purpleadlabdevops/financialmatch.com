@@ -3,10 +3,10 @@
     <div class="container">
       <div class="stepone">
         <div class="stepone-content">
-          <h1>Good News! <span>You Qualified for the ERC Program and can get up to <b>{{ money }}</b></span>. Let one of our ERC Experts know where to send your check.</h1>
+          <h1>Congratulations! The ERC Program is Still Open and You Qualified For It. Call the Number Below to Get Approved.</h1>
           <img src="@/assets/img/frame-11.jpeg" />
-          <p class="title">Claim Your ERC Refund By Tapping to Call Below:</p>
-          <a @click="setCall" :href="`tel:${phone}`">Click To Call Now And Claim</a>
+          <p class="title">Claim Your Tax Credit Check by Tapping To Call Below:</p>
+          <a @click="setCall" href="tel:18555851843">Click to Call Now and Claim</a>
           <p class="subtitle">First Come First Serve! Your spot will be held for</p>
           <p class="text-timer"><b>00</b> Minutes <b>{{ countDown }}</b> Seconds</p>
           <p class="sm">
@@ -27,17 +27,14 @@ export default {
       countDown: 90
     }
   },
-  computed: {
-    phone(){
-      return this.$store.getters['affiliates/phone']
-    }
-  },
   methods: {
     setCall() {
       EF.conversion({
-        offer_id: 135,
-        event_id: 253
+        offer_id: 1
       })
+        .then(res => {
+          console.dir(res)
+        })
     },
     countDownTimer() {
       setTimeout(() => {

@@ -55,6 +55,14 @@ export default {
     }
   },
   methods: {
+    setCall() {
+      EF.conversion({
+        offer_id: 1
+      })
+        .then(res => {
+          console.dir(res)
+        })
+    },
     timer() {
       const inteval = setInterval(()=>{
         this.time--
