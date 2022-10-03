@@ -14,7 +14,40 @@ app.get('/lead', (req, res) => {
     quizQuestions[q.id] = q.answer
   })
 
-const optinurl = process.env.NODE_ENV !== "production" ? 'https://financialmatch.com/' : req.query.optinurl
+  const campid = req.query.campid ? req.query.campid : 'ERCHELPERSCOPY'
+
+  const optinurl = process.env.NODE_ENV !== "production" ? 'https://erchelpers.com/' : req.query.optinurl
+
+  const dataLead = {
+    campid: 'ERCHELPERSCOPY',
+    sid: '3',
+    firstname: req.query.firstname,
+    lastname: req.query.lastname,
+    email: req.query.email,
+    phone1: req.query.phone,
+    company: req.query.company,
+    data1: req.query.data,
+    data6: req.query.lead_source,
+    data7: req.query.company,
+    data8: req.query.utm_source,
+    data9: req.query.utm_medium,
+    data10: req.query.utm_campaign,
+    c1: req.query.utm_source,
+    c2: req.query.utm_medium,
+    c3: req.query.utm_campaign,
+    c4: req.query.c4,
+    ssid: req.query.ssid,
+    ef_aff: req.query.c3,
+    source: req.query.source,
+    ef_sub1: req.query.ef_sub1,
+    ef_sub2: req.query.ef_sub2,
+    ef_sub3: req.query.ef_sub3,
+    ef_sub4: req.query.ef_sub4,
+    ef_trans: req.query.c1,
+    optinurl: optinurl,
+    ...quizQuestions,
+  }
+  if(req.query.is_owner) dataLead.is_owner = req.query.is_owner
 
   request(
     {
@@ -24,35 +57,7 @@ const optinurl = process.env.NODE_ENV !== "production" ? 'https://financialmatch
         X_KEY: '859eda508946525b6b0822ee93037a91',
         Accept: 'application/json',
       },
-      body: JSON.stringify({
-        campid: 'ERCHELPERSCOPY',
-        sid: '3',
-        firstname: req.query.firstname,
-        lastname: req.query.lastname,
-        email: req.query.email,
-        phone1: req.query.phone,
-        company: req.query.company,
-        data1: req.query.data,
-        data6: req.query.lead_source,
-        data7: req.query.company,
-        data8: req.query.utm_source,
-        data9: req.query.utm_medium,
-        data10: req.query.utm_campaign,
-        c1: req.query.utm_source,
-        c2: req.query.utm_medium,
-        c3: req.query.utm_campaign,
-        c4: req.query.c4,
-        ssid: req.query.ssid,
-        ef_aff: req.query.c3,
-        source: req.query.source,
-        ef_sub1: req.query.ef_sub1,
-        ef_sub2: req.query.ef_sub2,
-        ef_sub3: req.query.ef_sub3,
-        ef_sub4: req.query.ef_sub4,
-        ef_trans: req.query.c1,
-        optinurl: optinurl,
-        ...quizQuestions,
-      }),
+      body: JSON.stringify(dataLead),
     },
     (error, result, body) => {
       if (error) {
