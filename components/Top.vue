@@ -9,7 +9,8 @@
       <ThanksCalext v-else-if="route === 'calext' && result > 7" />
       <div class="top__inner" v-else>
         <div class="top__questions-col">
-          <quizui-form class="top__quiz" />
+          <quizui-formMain class="top__quiz" v-if="this.$route.name === 'index'" />
+          <quizui-form class="top__quiz" v-else />
         </div>
         <div class="top__title-col">
           <h4 class="top__pre-title">Most Business Owners Don’t Realize They Can Qualify To</h4>
