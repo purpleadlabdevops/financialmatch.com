@@ -57,19 +57,6 @@ export default {
             });
             snaptr('track', 'SIGN_UP');
         }
-      },
-      {
-        ssr: false,
-        src: 'https://www.googletagmanager.com/gtag/js?id=AW-10841851493',
-        async: true,
-        hid: 'script_gtag',
-        callback: () => {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-10841851493');
-            gtag('event', 'conversion', {'send_to': 'AW-10841851493/LMvNCL7zwNEDEOWM5rEo'});
-        }
       }
     ]
   },
