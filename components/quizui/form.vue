@@ -108,6 +108,7 @@
         id="phone"
       />
       <input type="submit" value="Submit" :disabled="spinner" />
+      <div class="small">By clicking “Submit,” I am providing my prior express written consent to be contacted at the above telephone number with offers and marketing communications from Financial Match [if applicable, “and affiliated tax professionals”] via automated telephone dialing and texting systems and artificial or pre-recorded voice (including SMS and MMS) and/or email, even if the telephone number above is on a corporate, state or national Do Not Call list.  Consent is not required as a condition to purchase any goods or services.</div>
     </div>
     <div class="step" v-if="notQualify">
       <h2>You Do Not Qualify for ERC</h2>

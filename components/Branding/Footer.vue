@@ -5,7 +5,10 @@
         <img src="@/assets/img/branding/footer-logo.png">
         Employee Retention Tax Credit
       </div>
-      <nuxt-link to="/">Privacy Policy</nuxt-link>
+      <div class="bfooter-menu">
+        <nuxt-link to="/privacy">Privacy Policy</nuxt-link>
+        <nuxt-link to="/terms">Terms and Conditions</nuxt-link>
+      </div>
       <span>All rights reserved</span>
     </div>
   </footer>
@@ -29,6 +32,11 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+  }
+  &-menu{
+    a{
+      display: block;
     }
   }
   &-inner{

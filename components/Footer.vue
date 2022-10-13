@@ -6,7 +6,10 @@
           <img src="@/assets/img/logo-white.png" alt="logo" />
           <span>Employee Retention Tax Credit</span>
         </div>
-        <nuxt-link to="/privacy">Privacy Policy</nuxt-link>
+        <div class="main-footer__menu">
+          <nuxt-link to="/privacy">Privacy Policy</nuxt-link>
+          <nuxt-link to="/terms">Terms and Conditions</nuxt-link>
+        </div>
         <div>All rights reserved</div>
       </div>
     </div>
@@ -23,9 +26,16 @@ export default {
 .main-footer {
   padding: 20px 0;
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @media(min-width:768px){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__menu{
+    a{
+      display: block;
+    }
   }
   &__logo {
     max-width: 248px;
