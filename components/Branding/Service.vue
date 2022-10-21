@@ -1,7 +1,10 @@
 <template>
   <section class="banner-service">
     <div class="container">
-      <h2>The Done-For-You ERC Service. <br>We Make The Complicated Simple. </h2>
+      <div class="banner-service__titles">
+        <h2>The Done-For-You ERC Service.</h2>
+        <h4>We Make The Complicated Simple.</h4>
+      </div>
       <div class="banner-service__inner">
         <h3>We do this by listening and understanding your businesses, identifying your needs, making a plan and holding your hand as we help you utilize government programs, get funding, and optimize your taxes.</h3>
         <ul>
@@ -22,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .banner-service{
-  padding: 100px 0 50px;
+  padding: 60px 0 30px;
   @media(min-width:768px){
     padding: 200px 0 100px;
   }
@@ -33,14 +36,26 @@ export default {
       align-items: center;
     }
   }
+  &__titles{}
   h2{
     font-weight: 600;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.4;
     color: #222222;
+    margin-bottom: 15px;
     @media(min-width:768px){
-      width: calc(50% - 15px);
       font-size: 55px;
+      margin-bottom: 30px;
+    }
+  }
+  h4{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #222222;
+    @media(min-width:992px){
+      font-size: 35px;
+      line-height: 43px;
     }
   }
   &__inner{
@@ -48,7 +63,9 @@ export default {
     box-shadow: -10px 27px 41px rgba(0, 0, 0, 0.13);
     border-radius: 31px;
     padding: 15px;
+    margin-top: 30px;
     @media(min-width:768px){
+      margin-top: 0;
       width: calc(50% - 15px);
       padding: 50px;
     }

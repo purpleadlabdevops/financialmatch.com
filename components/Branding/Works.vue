@@ -4,7 +4,7 @@
       <h2>How It Works</h2>
       <div class="works-inner">
         <div class="works-item" v-for="(item, i) in items">
-          <span>{{ ++i }}</span>
+          <img :src="require(`@/assets/img/branding/works-${++i}.png`)" :alt="item">
           {{ item }}
         </div>
       </div>
@@ -52,31 +52,24 @@ export default {
   }
   &-item{
     margin-bottom: 30px;
-    @media(min-width:768px){
-      padding-right: 50px;
-      width: calc(100% / 4);
-      margin-bottom: 0;
-    }
-    span{
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 35px;
-      color: #000000;
-      width: 96px;
-      height: 37px;
-      border: 1px solid #000000;
-      border-radius: 12px;
-      display: block;
-      margin-bottom: 10px;
-      text-align: center;
-      @media(min-width:768px){
-        margin-bottom: 40px;
-      }
-    }
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
     color: #000000;
+    text-align: center;
+    @media(min-width:768px){
+      text-align: left;
+      padding-right: 50px;
+      width: calc(100% / 4);
+      margin-bottom: 0;
+    }
+    img{
+      display: block;
+      margin: 0 auto 15px;
+      @media(min-width:768px){
+        margin-bottom: 35px;
+      }
+    }
   }
 }
 </style>

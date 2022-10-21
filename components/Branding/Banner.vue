@@ -1,6 +1,8 @@
 <template>
   <section class="branding-banner">
+    <!-- <BrandingRate /> -->
     <div class="container">
+      <div class="branding-banner__img"><img src="@/assets/img/branding/banner.png"></div>
       <div class="branding-banner__inner">
         <h1>Your Trusted Financial Concierge</h1>
         <p>Our professionals do all the hard work so you can sleep at night knowing it was done right.</p>
@@ -10,7 +12,6 @@
         </div>
       </div>
     </div>
-    <BrandingRate />
   </section>
 </template>
 
@@ -23,20 +24,40 @@ export default {
 <style lang="scss" scoped>
 .branding-banner{
   background: linear-gradient(114.55deg, #EBEBEB -1.9%, #FFFFFF 43.69%);
-  padding: 100px 0 0;
-  min-height: 100vh;
-  @media(min-width:768px){
-    padding: 180px 0 0;
-  }
+  padding: 100px 0 46px;
+  overflow: hidden;
   @media(min-width:992px){
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
     padding: 180px 0;
   }
   &__inner{
     @media(min-width:992px){
       width: 50%;
+    }
+  }
+  &__img{
+    display: block;
+    margin-bottom: 36px;
+    @media(min-width:992px){
+      margin-bottom: 0;
+      order: 2;
+      width: 50%;
+      height: auto;
+    }
+    img{
+      width: 100%;
+      height: auto;
+      @media(min-width:992px){
+        width: 120%;
+        transform: translateX(100px);
+      }
+    }
+  }
+  .container{
+    @media(min-width:992px){
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
   h1{

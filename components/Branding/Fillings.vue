@@ -81,20 +81,20 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, #EAEAEE 11.38%, #FFFFFF 86.03%);
-    box-shadow: -10.9037px -10.9037px 59.9704px #FFFFFF, 21.8074px 16.3556px 27.2593px rgba(241, 241, 241, 0.25), inset 0px 21.8074px 32.7111px rgba(192, 192, 192, 0.25), inset -38.163px -27.2593px 21.8074px #FFFFFF;
+    width: 88.66px;
+    height: 88.66px;
+    background: linear-gradient(135deg, #FFFFFF 11.38%, #FFFFFF 86.03%);
+    box-shadow: 0px 0px 15.9156px rgba(202, 202, 202, 0.58);
     @media(min-width:768px){
       width: 152.64px;
       height: 152.64px;
-      margin-right: 0;
+      margin-right: 30px;
     }
     img{
-      width: 100px;
+      width: 58px;
       height: auto;
       @media(min-width:768px){
-        width: 152.64px;
+        width: 100px;
       }
     }
   }

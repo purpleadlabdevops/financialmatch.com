@@ -1,14 +1,14 @@
 <template>
-<svg class="branding-rate" width="948" height="941" viewBox="0 0 948 941" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="branding-rate" width="785" height="702" viewBox="0 0 785 702" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g clip-path="url(#clip0_27_12)">
-    <g filter="url(#filter0_f_27_12)">
+<!--     <g filter="url(#filter0_f_27_12)">
       <path d="M810.018 568.754L699.249 936.08L0 936.098L565.851 290.234L810.018 568.754Z" fill="url(#paint0_radial_27_12)"/>
-    </g>
-    <path d="M535.303 428.019L142.079 928.579L-115.408 843.461L116.614 141.585L408.323 159.41L535.303 428.019Z" fill="url(#paint1_radial_27_12)"/>
-    <path d="M511.459 430.37L-20.5008 923.115L-5.68235 702.769L21.4843 361.302L269.163 313.401L511.459 430.37Z" fill="url(#paint2_radial_27_12)"/>
-    <g filter="url(#filter1_f_27_12)">
+    </g> -->
+    <!-- <path d="M535.303 428.019L142.079 928.579L-115.408 843.461L116.614 141.585L408.323 159.41L535.303 428.019Z" fill="url(#paint1_radial_27_12)"/> -->
+    <!-- <path d="M511.459 430.37L-20.5008 923.115L-5.68235 702.769L21.4843 361.302L269.163 313.401L511.459 430.37Z" fill="url(#paint2_radial_27_12)"/> -->
+<!--     <g filter="url(#filter1_f_27_12)">
       <path d="M923.92 273.026L903.679 950.21L797.703 525.654L637.392 500.975L763.624 412.612L635.989 105.185L923.92 273.026Z" fill="url(#paint3_radial_27_12)"/>
-    </g>
+    </g> -->
 
     <g class="anim anim-one">
       <path d="M186.701 313.049L162.721 240.978L474.505 293.03L478.13 363.514L186.701 313.049Z" fill="url(#paint4_linear_27_12)"/>
@@ -201,9 +201,9 @@ export default {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 100px;
   @media(max-width:991px){
-    max-width: 700px;
+    max-width: 785px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
   }

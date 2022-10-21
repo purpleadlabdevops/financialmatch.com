@@ -1,16 +1,16 @@
 <template>
   <section class="industries">
     <div class="container">
+      <div class="industries-right">
+        <h2>Industries We’ve Helped</h2>
+        <p>We’ve helped clients of all sizes and  across multiple different industries.</p>
+        <nuxt-link to="/" class="btn">Check Eligibility</nuxt-link>
+      </div>
       <div class="industries-left">
         <div class="industries-item" v-for="(item, index) in items">
           <div class="industries-img"><img :src="require(`@/assets/img/branding/ind-${++index}.png`)" alt=""></div>
           <h3>{{ item }}</h3>
         </div>
-      </div>
-      <div class="industries-right">
-        <h2>INDUSTRIES WE’VE HELPED</h2>
-        <p>We’ve helped clients of all sizes and  across multiple different industries.</p>
-        <nuxt-link to="/" class="btn">Check Eligibility</nuxt-link>
       </div>
     </div>
   </section>
@@ -46,16 +46,19 @@ export default {
     }
   }
   &-right{
-    padding-left: 30px;
+    margin-bottom: 30px;
     @media(min-width:768px){
+      margin-bottom: 0;
+      padding-left: 30px;
       width: 50%;
+      order: 2;
     }
   }
   &-img{
     width: 152.64px;
     height: 152.64px;
-    background: linear-gradient(135deg, #EAEAEE 11.38%, #FFFFFF 86.03%);
-    box-shadow: -10.9603px -10.9603px 60.2814px #FFFFFF, 21.9205px 16.4404px 27.4006px rgba(241, 241, 241, 0.25), inset 0px 21.9205px 32.8808px rgba(192, 192, 192, 0.25), inset -38.3609px -27.4006px 21.9205px #FFFFFF;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 27.4006px rgba(202, 202, 202, 0.58);
     margin: 0 auto 20px;
     overflow: hidden;
     border-radius: 50%;
@@ -67,7 +70,7 @@ export default {
     }
   }
   &-item{
-    margin-top: 40px;
+    margin-bottom: 40px;
     width: calc(100% / 2);
     @media(min-width:768px){
       width: calc(100% / 3);
@@ -87,10 +90,10 @@ export default {
     font-weight: 600;
     font-size: 40px;
     line-height: 1.4;
-    text-align: right;
     color: #222222;
     margin-bottom: 40px;
     @media(min-width:768px){
+    text-align: right;
       font-size: 55px;
     }
   }
@@ -98,16 +101,15 @@ export default {
     font-weight: 400;
     font-size: 20px;
     line-height: 1.3;
-    text-align: right;
     color: #222222;
     margin-bottom: 30px;
     @media(min-width:768px){
+    text-align: right;
       font-size: 30px;
       margin-bottom: 60px;
     }
   }
   .btn{
-    margin-left: auto;
     width: 500px;
     max-width: 100%;
     text-align: center;
@@ -120,6 +122,9 @@ export default {
     border-radius: 10px;
     display: block;
     text-decoration: none;
+    @media(min-width:768px){
+      margin-left: auto;
+    }
     &:hover{
       opacity: .7;
     }
