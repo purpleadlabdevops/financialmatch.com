@@ -2,23 +2,11 @@
   <section class="fillings">
     <div class="container">
       <h2>Some Recent Fillings</h2>
-      <div class="fillings-item">
+      <div class="fillings-item" v-for="item in items">
         <div class="fillings-img">
           <img src="@/assets/img/branding/icon-fillings.png">
         </div>
-          {Industry} client $XX,XXX
-      </div>
-      <div class="fillings-item">
-        <div class="fillings-img">
-          <img src="@/assets/img/branding/icon-fillings.png">
-        </div>
-          {Industry} client $XX,XXX
-      </div>
-      <div class="fillings-item">
-        <div class="fillings-img">
-          <img src="@/assets/img/branding/icon-fillings.png">
-        </div>
-          {Industry} client $XX,XXX
+        {{ item.title }} {{ item.price }}
       </div>
     </div>
   </section>
@@ -26,7 +14,24 @@
 
 <script>
 export default {
-
+  data(){
+    return{
+      items:[
+        {
+          title: 'Mechanical Supplies ',
+          price: '$1,197,460.83'
+        },
+        {
+          title: 'Restaurant ',
+          price: '$907,061.63'
+        },
+        {
+          title: 'Construction ',
+          price: '$403,327.64'
+        }
+      ]
+    }
+  }
 }
 </script>
 

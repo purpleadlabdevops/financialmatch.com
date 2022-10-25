@@ -8,7 +8,6 @@
         <p>Our professionals do all the hard work so you can sleep at night knowing it was done right.</p>
         <div class="btn-list">
           <nuxt-link to="/" class="btn">Check Eligibility</nuxt-link>
-          <nuxt-link to="/" class="btn btn-white">Learn More</nuxt-link>
         </div>
       </div>
     </div>
