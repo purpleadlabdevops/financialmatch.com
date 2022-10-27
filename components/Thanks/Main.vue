@@ -87,7 +87,7 @@ export default {
     }
   },
   mounted(){
-    this.$store.commit('setPhone', '18558559365')
+    this.$store.commit('setPhone', '18555852025')
     window.scrollTo(0, 0)
   }
 }
