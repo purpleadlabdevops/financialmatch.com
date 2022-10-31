@@ -326,7 +326,11 @@ export default {
           })
           .then(res => {
             console.dir(res)
-            this.$parent.route = this.$route.name
+            if(this.$route.name === 'redirectty'){
+              window.location.href = `https://thanks.financialmatch.com/?q=${JSON.stringify(this.quiz)}&email=${this.email}`
+            } else {
+              this.$parent.route = this.$route.name
+            }
           })
           .catch(err => {
             this.$swal(err)
