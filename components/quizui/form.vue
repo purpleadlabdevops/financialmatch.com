@@ -171,6 +171,12 @@ export default {
           id: 'data5',
         },
         {
+          question: 'Are you the owner or decision maker for this business?',
+          options: ['Yes', 'No'],
+          answer: null,
+          id: 'data6',
+        },
+        {
           question: 'Did You Receive PPP Money',
           options: ['Yes', 'No'],
           answer: null,
@@ -295,7 +301,8 @@ export default {
           ef_sub4: this.sub4,
           ef_trans: this.c1,
           source: this.source,
-          optinurl: window.location.href
+          optinurl: window.location.href,
+          is_owner: this.quiz[4].answer
         }
 
         this.$axios.get(this.setUrl(data))

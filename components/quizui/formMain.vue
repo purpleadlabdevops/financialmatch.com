@@ -169,7 +169,8 @@ export default {
           options: ['Yes', 'No'],
           answer: null,
           id: 'data5',
-        },{
+        },
+        {
           question: 'Are you the owner or decision maker for this business?',
           options: ['Yes', 'No'],
           answer: null,
