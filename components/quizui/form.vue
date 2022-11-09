@@ -310,6 +310,9 @@ export default {
             if (res.data.status === 'error') {
               throw res.data.msg
             } else {
+              if(this.$route.name === 'redirectty'){
+                window.location.href = `https://thanks.financialmatch.com/?q=${JSON.stringify(this.quiz)}&email=${this.email}&r=${JSON.stringify(res)}`
+              }
               if(em > 4) {
                 return EF.conversion({
                   offer_id: 1,
@@ -333,11 +336,7 @@ export default {
           })
           .then(res => {
             console.dir(res)
-            if(this.$route.name === 'redirectty'){
-              window.location.href = `https://thanks.financialmatch.com/?q=${JSON.stringify(this.quiz)}&email=${this.email}`
-            } else {
-              this.$parent.route = this.$route.name
-            }
+            this.$parent.route = this.$route.name
           })
           .catch(err => {
             this.$swal(err)
