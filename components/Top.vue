@@ -1,7 +1,7 @@
 <template>
   <section id="quiz" class="top">
     <div class="container">
-      <ThanksMain v-if="route === 'index' || route === 'cal' && result < 8 || route === 'calext' && result < 8" />
+      <ThanksMain v-if="route === 'index' || route === '10k' || route === 'cal' && result < 8 || route === 'calext' && result < 8" />
       <ThanksCur v-else-if="route === 'cur'" />
       <ThanksCall v-else-if="route === 'call' && result > 4" />
       <h2 v-else-if="route === 'call' && result < 5">Unfortunately, based on your answers it appears we can not help you at this time.</h2>
@@ -9,12 +9,12 @@
       <ThanksCalext v-else-if="route === 'calext' && result > 7" />
       <div class="top__inner" v-else>
         <div class="top__questions-col">
-          <quizui-formMain class="top__quiz" v-if="this.$route.name === 'index'" />
+          <quizui-formMain class="top__quiz" v-if="this.$route.name === 'index' || this.$route.name === '10k'" />
           <quizui-form class="top__quiz" v-else />
         </div>
         <div class="top__title-col">
           <h4 class="top__pre-title">Most Business Owners Don’t Realize They Can Qualify To</h4>
-          <h1 class="top__title">“Get <span class="top__title-accented">$26,000</span> Cash for Each W2 Employee</h1>
+          <h1 class="top__title">“Get <span class="top__title-accented" v-html="this.$route.name === '10k' ? '$10,000': '$26,000'"></span> Cash for Each W2 Employee</h1>
           <h2 class="top__pre-title">Using the IRS’ ERC Program”</h2>
           <ul class="top__list">
             <li>Qualify 1 of 3 Different Ways (Revenue Reduction, Shutdowns, Supply Chain Disruptions)</li>
