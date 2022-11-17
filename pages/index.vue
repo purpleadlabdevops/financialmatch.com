@@ -1,31 +1,28 @@
 <template>
-  <main>
-    <Top />
-    <Section1 />
-    <Section2 />
-    <Section3 />
-    <Section4 />
-    <Section5 />
-    <Section6 />
-    <Section7 />
-    <faq />
+  <main class="branding">
+    <Header />
+    <Banner />
+    <Advantages />
+    <Service />
+    <Industries />
+    <Fillings />
+    <Works />
+    <Faq />
+    <Footer />
   </main>
 </template>
-
-<script>
-export default {
-  name: 'IndexPage',
-  head: {
-    script: [
-      {
-        src: '/js/leadId.js',
-        body: true,
-        id: 'LeadiDscript',
-      },
-    ],
-  },
-  mounted(){
-    this.$store.commit('setPhone', '18558559365')
+<style lang="scss">
+.branding, .branding *{
+  font-family: 'Montserrat', sans-serif;
+  .container {
+    max-width: 1330px;
+    padding: 0 15px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
-</script>
+</style>
