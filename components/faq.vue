@@ -9,7 +9,7 @@
             <div class="faqu-a">{{ item.a }}</div>
           </div>
         </div>
-        <nuxt-link to="https://go.financialmatch.com/" class="btn">Check Eligibility</nuxt-link>
+        <a href="https://go.financialmatch.com/" class="btn">Check Eligibility</a>
       </div>
     </div>
   </section>

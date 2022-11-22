@@ -148,6 +148,7 @@ export default {
 .branding-rate{
   display: block;
   margin-bottom: 36px;
+  width: 100%; height: auto;
   @media(min-width:992px){
     margin-bottom: 0;
     order: 2;

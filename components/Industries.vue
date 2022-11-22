@@ -4,7 +4,7 @@
       <div class="industries-right">
         <h2>Industries We’ve Helped</h2>
         <p>We’ve helped clients of all sizes and  across multiple different industries.</p>
-        <nuxt-link to="https://go.financialmatch.com/" class="btn">Check Eligibility</nuxt-link>
+        <a href="https://go.financialmatch.com/" class="btn">Check Eligibility</a>
       </div>
       <div class="industries-left">
         <div class="industries-item" v-for="(item, index) in items">

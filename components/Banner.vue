@@ -7,7 +7,7 @@
         <h1>Your Trusted Financial Concierge</h1>
         <p>Our professionals do all the hard work so you can sleep at night knowing it was done right.</p>
         <div class="btn-list">
-          <nuxt-link to="https://go.financialmatch.com/" class="btn">Check Eligibility</nuxt-link>
+          <a href="https://go.financialmatch.com/" class="btn">Check Eligibility</a>
         </div>
       </div>
     </div>
