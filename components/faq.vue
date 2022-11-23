@@ -1,189 +1,191 @@
 <template>
-  <section class="faqu">
-    <div class="container">
-      <h2>FREQUENTLY ASKED QUESTIONS</h2>
-      <div class="faqu-inner">
-        <div class="faqu-list">
-          <div class="faqu-item" v-for="(item, i) in items">
-            <div class="faqu-q" @click.prevent="action" :key="`question${++i}`">{{ item.q }}</div>
-            <div class="faqu-a">{{ item.a }}</div>
-          </div>
+  <section class="faq">
+    <div class="faq__container">
+      <h3 class="faq__title">Frequently Asked Questions</h3>
+      <ul class="faq__nav">
+        <li><a href="#faq-qualification">Qualification</a></li>
+        <li><a href="#faq-tax-credit">Tax Credit</a></li>
+        <!--        <li><a href="#faq-our-company">Our Company</a></li>-->
+      </ul>
+      <!--    TAX    -->
+      <div id="faq-qualification" class="faq__group">
+        <h3 class="faq__group-title">Qualification</h3>
+        <div class="faq__block">
+          <blocks-faq v-for="(faq, i) in tax" :key="'tax_' + i">
+            <template #title>{{ faq.title }}</template>
+            <template #dscr>{{ faq.dscr }} </template>
+          </blocks-faq>
         </div>
-        <a href="https://go.financialmatch.com/" class="btn">Check Eligibility</a>
       </div>
+      <!--    Tax Credit   -->
+      <div id="faq-tax-credit" class="faq__group">
+        <h3 class="faq__group-title">Tax Credit</h3>
+        <div class="faq__block">
+          <blocks-faq v-for="(faq, i) in credit" :key="'credit_' + i">
+            <template #title>{{ faq.title }}</template>
+            <template #dscr><div v-html="faq.dscr"></div></template>
+          </blocks-faq>
+        </div>
+      </div>
+
+      <!--    Our Company   -->
+      <!--      <div id="faq-our-company" class="faq__group">-->
+      <!--        <h3 class="faq__group-title">Our Company</h3>-->
+      <!--        <div class="faq__block">-->
+      <!--          <blocks-faq v-for="(faq, i) in company" :key="'company_' + i">-->
+      <!--            <template #title>{{ faq.title }}</template>-->
+      <!--            <template #dscr><div v-html="faq.dscr"></div></template>-->
+      <!--          </blocks-faq>-->
+      <!--        </div>-->
+      <!--      </div>-->
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  data(){
+  name: 'faq',
+  data() {
     return {
-      items: [
+      tax: [
         {
-          q: "Is the ERC program a loan?",
-          a: "No, this is government money for businesses affected by Covid. This is NOT a loan."
+          title: 'Can I qualify if I’m a 1099 contractor?',
+          dscr:
+            ' Unfortunately no. This program is only for companies who paid W2\n' +
+            '              wages to non-owners.',
         },
         {
-          q: "Can we qualify if our revenue went up in 2020 or 2021?",
-          a: "No, this is government money for businesses affected by Covid. This is NOT a loan."
+          title: 'Can I qualify if I don’t have any W2 employees?',
+          dscr: 'Unfortunately no. This program is only for companies who paid W2 wages to non-owners.',
         },
         {
-          q: "Can we qualify if we already received a PPP loan?",
-          a: "No, this is government money for businesses affected by Covid. This is NOT a loan."
+          title: 'Can I qualify for ERC when I got a PPP loan?',
+          dscr: 'Yes! There are multiple quarters you can qualify for, even if you got a PPP loan. Unfortunately you can’t use the same covered time period that you used for PPP, which might reduce your ERC amount, but you can most definitely qualify for ERC.',
         },
         {
-          q: "Wasn’t the ERC program from several years ago?",
-          a: "No, this is government money for businesses affected by Covid. This is NOT a loan."
-        }
-      ]
+          title:
+            'What if my revenue went up in 2020 or 2021? Can I still qualify?',
+          dscr: 'Yes! It’s called the “Employee Retention” credit, not the “Revenue Reduction” credit. It’s intended to help out the businesses that kept people employed during the hard times of pandemic, so you can qualify even if your revenue went up. You’ll need to qualify using one of the other qualification checks though – shutdowns / mandates or supply chain disruption.',
+        },
+        {
+          title: 'How long is the ERC program open for?',
+          dscr: 'For most businesses this will be open into 2024 (unless they change the rules again). It’s open as long as you can file amended 941-X returns, which is the later of 3 years from the date you filed your original return, or 2 years from the date you paid the payroll tax.',
+        },
+        {
+          title: 'What if I have bad credit? Is there a credit check involved?',
+          dscr: 'It doesn’t matter, because this is not a loan – it’s a tax credit. There are no credit checks, collateral, or personal guarantees required.',
+        },
+        {
+          title: 'Can I qualify for ERC if my business is now closed?',
+          dscr: 'Yes, there is a possibility. It depends on when the business closed.',
+        },
+      ],
+      credit: [
+        {
+          title: 'What documents do I need to send you?',
+          dscr: 'To complete your tax credit, we’ll work with you and your CPA to get the following documents:<ul><li>Payroll Journals outlining all payments, deductions, contributions and taxes for each employee for each paycheck during your ERC eligibility period.</li><li>Filed 941, 943 or 944 payroll reports.</li><li>Profit and Loss Statements (P&amp;Ls) for 2020 and 2021</li><li>Tax returns for 2020 and 2021</li><li>PPP Loan Forgiveness Application (if applicable)</li></ul>',
+        },
+        {
+          title: 'Do I need to repay the tax credit?',
+          dscr: 'Nope! There is nothing to repay with a tax credit. This is not a loan.',
+        },
+        {
+          title: 'How long does it take to get my credit?',
+          dscr: 'We are generally telling clients between 7-9 months. We take a few weeks to do the work, and the IRS is variable in how long it’s taking to process, but we’re seeing in the 7-9 month range.',
+        },
+        {
+          title: 'When will the ERC funds run out?',
+          dscr: 'There is no set amount…',
+        },
+        {
+          title: 'What if I have back taxes on my account with the IRS?',
+          dscr: 'If you owe back taxes on your account, the IRS will deduct the amount you owe in back taxes from the credit amount, and will pay you the difference.',
+        },
+        {
+          title: 'Is the ERC credit taxable?',
+          dscr: 'The ERC credit is not actually considered taxable income for federal tax purposes. But what it might do is reduce your company’s deductible wage expenses by the tax credit amount, which will most likely increase your net profit, and therefore what you pay taxes on. Please provide the credit to your CPA or tax preparer for what to do.',
+        },
+        {
+          title: 'Will I get in trouble with the IRS for filing?',
+          dscr: 'Absolutely not! The IRS created this program and doubled-down on making it easier and more lucrative for businesses, so they really want you to file and use it.',
+        },
+      ],
+      // company: [
+      //   {
+      //     title: 'How much do you charge?',
+      //     dscr: 'Our fees are paid only after you receive your credit, and are generally between 10% and 15%, depending on the complexity of your business. We do usually charge a retainer deposit upon initial agreement, but that amount is completely refundable if you do not end up qualifying or receiving your tax credit.',
+      //   },
+      //   {
+      //     title:
+      //       'What if I don’t end up qualifying? Can I get my deposit back?',
+      //     dscr: 'Yes, your initial retainer deposit is 100% refundable if you do not end up qualifying for or receiving your credit.',
+      //   },
+      // ],
     }
   },
-  methods: {
-    action(e){
-      e.target.parentNode.classList.toggle('active')
-    }
-  }
 }
 </script>
 
-<style lang="scss" scoped>
-.faqu{
-  padding: 50px 0;
-  @media(min-width:768px){
-    padding: 100px 0;
+<style lang="scss">
+.faq {
+  padding: 60px 0;
+  background: $global_bg_color_1;
+}
+.faq__container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+.faq__title {
+  text-align: center;
+  font-size: 30px;
+  color: $global_color_1;
+  font-weight: 600;
+}
+.faq__nav {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  @include xs {
+    flex-direction: column;
   }
-  h2{
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 1.4;
-    color: #222222;
-    margin-bottom: 40px;
-    @media(min-width:768px){
-      font-size: 55px;
-      margin-bottom: 80px;
-    }
-  }
-  &-inner{
-    padding: 20px 20px;
-    background: linear-gradient(124.04deg, #EBEBEB -1.83%, #FFFFFF 92.98%);
-    box-shadow: -8.75367px -8.75367px 48.1452px #FFFFFF, 17.5073px 13.1305px 21.8842px rgba(241, 241, 241, 0.25), -10px 27px 40px rgba(0, 0, 0, 0.06), inset 0px 17.5073px 26.261px rgba(192, 192, 192, 0.25), inset -30.6378px -21.8842px 57px #FFFFFF;
-    border-radius: 31px;
-    @media(min-width:768px){
-      padding: 90px;
-    }
-  }
-  &-list{
-    @media(min-width:768px){
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  }
-  &-item{
-    @media(min-width:768px){
-      width: calc(50% - 15px);
-    }
-    &.active{
-      .faqu-q{
-        &:after{
-          height: 0;
-        }
-      }
-      .faqu-a{
-        max-height: 1000px;
-        opacity: 1;
-        &:before{
-          height: 100%;
-        }
-      }
-    }
-  }
-  &-q{
-    font-weight: 600;
+
+  a {
     font-size: 18px;
-    line-height: 1.2;
-    color: #222222;
-    margin-top: 20px;
-    padding-left: 37px;
-    position: relative;
-    cursor: pointer;
-    @media(min-width:768px){
-      margin-top: 30px;
-      font-size: 24px;
-    }
-    &:before{
-      content: "";
-      width: 22px;
-      height: 4px;
-      position: absolute;
-      left: 0; top: 12px;
-      background: #326A6F;
-      border-radius: 3px;
-    }
-    &:after{
-      content: "";
-      width: 4px;
-      height: 22px;
-      position: absolute;
-      left: 9px; top: 4px;
-      background: #326A6F;
-      border-radius: 3px;
-      transition: .5s ease;
-    }
-    &:hover{
-      opacity: .7;
-    }
-  }
-  &-a{
-    margin-left: 55px;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 1.3;
-    color: #000000;
-    position: relative;
-    margin-top: 25px;
-    padding-left: 20px;
-    max-height: 0px;
-    opacity: 0;
-    transition: 1s ease;
-    @media(min-width:768px){
-      font-size: 18px;
-    }
-    &:before{
-      background: #326A6F;
-      content: "";
-      display: block;
-      width: 4px;
-      position: absolute;
-      left: 0; top: 0;
-      height: 0%;
-      border-radius: 3px;
-      transition: .5s ease .25s;
-    }
-  }
-  .btn{
-    margin: 60px auto 0;
-    width: 500px;
-    max-width: 100%;
     text-align: center;
-    height: 60px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 60px;
-    color: #FFFFFF;
-    background: #326A6F;
-    border-radius: 10px;
-    display: block;
+    display: inline-block;
     text-decoration: none;
-    @media(min-width:768px){
-      font-size: 24px;
-      height: 66px;
-      line-height: 66px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 5px 10px 5px;
+    color: #146c70;
+    transition: 0.2s ease all;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+    &:hover {
+      box-shadow: 4px 4px 10px rgb(0 0 0 / 10%);
     }
-    &:hover{
-      opacity: .7;
+    @include xs {
+      display: block;
     }
   }
+}
+.faq__group-title {
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+  margin-top: 30px;
+  font-size: 28px;
+}
+.faq__block {
+  background: #fff;
+  padding: 25px;
+  box-shadow: 0 3px 25px rgb(0 0 0 / 10%);
+  border-radius: 20px;
 }
 </style>

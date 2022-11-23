@@ -1,5 +1,11 @@
 export default {
-  ssr: false,
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  // ssr: false,
+
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'server',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Financial Match | Apply for Your ERC Credit Today!',
     htmlAttrs: {
@@ -12,12 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       { name: "facebook-domain-verification", content: "kiopg5rxifn74adikb3gbcqtbnreck" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true },
-      { href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap", rel: "stylesheet" }
-    ],
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     script: [
       {
         ssr: false,
@@ -53,23 +54,33 @@ export default {
       }
     ]
   },
+  styleResources: {
+    scss: ['styles/_mixins.scss', 'styles/_vars.scss'],
+  },
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/styles/global'],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  router: {
-    base: '/',
-    mode: 'history',
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'error',
-        path: '*',
-        component: resolve(__dirname, 'pages/index.vue')
-      })
-    }
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: ['@nuxtjs/axios', 'nuxt-sweetalert2', '@nuxtjs/style-resources'],
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  env: {
+    API: process.env.API,
+    campid: process.env.campid,
+    X_KEY: process.env.X_KEY,
   },
-  generate: {
-    dir: './dist_server'
+  server: {
+    port: process.env.PORT,
+    host: process.env.HOST,
   },
-  build: {
-    target: 'static'
-  }
+  serverMiddleware: ['~/api/index.js'],
 }

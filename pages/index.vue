@@ -1,16 +1,21 @@
 <template>
   <main class="branding">
-    <Header />
-    <Banner />
-    <Advantages />
-    <Service />
-    <Industries />
-    <Fillings />
-    <Works />
-    <Faq />
-    <Footer />
+    <BrandingHeader />
+    <BrandingBanner />
+    <BrandingAdvantages />
+    <BrandingService />
+    <BrandingIndustries />
+    <BrandingFillings />
+    <BrandingWorks />
+    <BrandingFaq />
+    <BrandingFooter />
   </main>
 </template>
+<script>
+export default{
+  layout: 'branding'
+}
+</script>
 <style lang="scss">
 .branding, .branding *{
   font-family: 'Montserrat', sans-serif;
