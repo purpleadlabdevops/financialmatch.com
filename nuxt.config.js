@@ -70,7 +70,16 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', 'nuxt-sweetalert2', '@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/axios',
+    'nuxt-sweetalert2',
+    '@nuxtjs/style-resources',
+    ['fullpage-nuxt', {
+      animate: true,
+      mouseWheelSensitivity: 120,
+      showIndicators: true,
+    }]
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   env: {
