@@ -9,7 +9,7 @@
 
         <h2>Thanks</h2>
         <h4>We have received your message</h4>
-        <button class="link link-white">
+        <button @click="$parent.sent = false" class="link link-white">
           <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.65674 11.6562L1.4141 7.41361L-0.000115871 5.9994L1.4141 4.58518L5.65674 0.342542L7.07095 1.75676L3.67684 5.15087L9.89938 4.58518L9.89938 7.41361L3.67684 6.84792L7.07095 10.242L5.65674 11.6562Z" fill="#FAFAFA"/></svg>
           Back to the main page
         </button>
