@@ -7,17 +7,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/lead', (req, res) => {
   const request = require('request')
-
   const data = JSON.parse(req.query.data)
   const quizQuestions = {}
   data.forEach((q, i) => {
     quizQuestions[q.id] = q.answer
   })
-
   const campid = req.query.campid ? req.query.campid : 'ERCHELPERSCOPY'
-
   const optinurl = process.env.NODE_ENV !== "production" ? 'https://erchelpers.com/' : req.query.optinurl
-
   const dataLead = {
     campid: 'ERCHELPERSCOPY',
     sid: '3',
@@ -48,7 +44,6 @@ app.get('/lead', (req, res) => {
     ...quizQuestions,
   }
   if(req.query.is_owner) dataLead.is_owner = req.query.is_owner
-
   request(
     {
       url: 'https://smb.leadbyte.com/restapi/v1.3/leads',
@@ -61,11 +56,17 @@ app.get('/lead', (req, res) => {
     },
     (error, result, body) => {
       if (error) {
+console.log('---------------------------------error');
+console.dir(error);
+console.log('---------------------------------');
         res.send({
           status: 'error',
           msg: error,
         })
       } else {
+console.log('---------------------------------body');
+console.dir(body);
+console.log('---------------------------------');
         const response = JSON.parse(body)
         if (response.status === 'Error') {
           res.send({

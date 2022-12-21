@@ -25,7 +25,10 @@
 .screen-service{
   padding: 40px 0;
   @media(min-width:768px){
-    padding: 160px 0 80px;
+    padding: 80px 0;
+  }
+  @media(min-width:992px){
+    padding: 160px 0;
   }
   h2{
     font-weight: 600;

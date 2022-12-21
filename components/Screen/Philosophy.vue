@@ -21,6 +21,9 @@
   @media(min-width:768px){
     padding: 80px 0;
   }
+  @media(min-width:992px){
+    padding: 160px 0;
+  }
   h2{
     font-weight: 600;
     font-size: 32px;
