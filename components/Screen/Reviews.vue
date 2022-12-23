@@ -3,12 +3,13 @@
     <div class="container">
       <div class="screen-reviews--row">
         <h2>Client review</h2>
-        <button @click.prevent="next">
+        <button v-if="winWidth > 991" @click.prevent="next">
           Next review
           <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H6H8V2V8H6V3.2L2 8L0 6L4.8 2H0V0Z" fill="#DC5750"/></svg>
         </button>
       </div>
       <div class="screen-reviews--slider">
+
         <div class="screen-reviews--item active">
           <img src="@/assets/img/screens/review-1.png">
           <div class="screen-reviews--info">
@@ -24,7 +25,24 @@
             </div>
           </div>
         </div>
+
         <div class="screen-reviews--item">
+          <img src="@/assets/img/screens/review-2.png">
+          <div class="screen-reviews--info">
+            <h3>Cody K.</h3>
+            <h4>CEO Paramaus.com</h4>
+            <div class="screen-reviews--left">
+              <div class="screen-reviews--money"><span>$</span> 400,700</div>
+              <h5>received  to our clients</h5>
+            </div>
+            <div class="screen-reviews--right">
+              <div class="screen-reviews--monthes">4 <span>months</span></div>
+              <h5>from call to receiving money</h5>
+            </div>
+          </div>
+        </div>
+
+<!--         <div class="screen-reviews--item">
           <img src="@/assets/img/screens/review-2.png">
           <div class="screen-reviews--info">
             <h3>Selena Giri</h3>
@@ -68,29 +86,27 @@
               <h5>from call to receiving money</h5>
             </div>
           </div>
-        </div>
-        <div class="screen-reviews--item">
-          <img src="@/assets/img/screens/review-2.png">
-          <div class="screen-reviews--info">
-            <h3>Selena Giri</h3>
-            <h4>CEO Chess.com</h4>
-            <div class="screen-reviews--left">
-              <div class="screen-reviews--money"><span>$</span> 200,500</div>
-              <h5>received  to our clients</h5>
-            </div>
-            <div class="screen-reviews--right">
-              <div class="screen-reviews--monthes">4 <span>months</span></div>
-              <h5>from call to receiving money</h5>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
+      <button v-if="winWidth < 992" @click.prevent="next">
+        Next review
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H6H8V2V8H6V3.2L2 8L0 6L4.8 2H0V0Z" fill="#DC5750"/></svg>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+      winWidth: 0
+    }
+  },
+  mounted(){
+    this.winWidth = window.innerWidth
+    window.addEventListener('resize', e => this.winWidth = window.innerWidth)
+  },
   methods: {
     next(){
       const activeSlide = document.querySelector(`.active`)
@@ -135,6 +151,10 @@ export default {
     text-transform: capitalize;
     color: #DC5750;
     padding: 0;
+    @media(max-width:767px){
+      margin-left: auto;
+      display: block;
+    }
     svg{
       margin-left: 4px;
       transition: transform .5s ease;
@@ -154,11 +174,12 @@ export default {
     margin-bottom: 32px;
   }
   &--slider{
-    min-height: 349px;
+    min-height: 330px;
     position: relative;
     width: calc(100% - 32px);
     @media(min-width:992px){
       width: 1000px;
+      min-height: 349px;
     }
   }
   &--item{

@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="screen-footer--row">
-        <span>© Financial Match 2022 All rights reserved.</span>
+        <span>© Financial Match <br>2022 All rights reserved.</span>
         <div class="screen-footer--menu">
           <nuxt-link to="/terms">Terms and Conditions</nuxt-link>
           <nuxt-link to="/privacy">Privacy policy</nuxt-link>
@@ -54,6 +54,9 @@
     }
   }
   &--menu{
+    @media(max-width:767px){
+      order: 2;
+    }
     a {
       font-weight: 400;
       font-size: 16px;
@@ -62,6 +65,7 @@
       color: #FAFAFA;
       @media(max-width:767px){
         display: block;
+        font-size: 12px;
       }
       &:hover{
         text-decoration: none;
@@ -94,8 +98,12 @@
       line-height: 140%;
       color: #FAFAFA;
       @media(max-width:767px){
-        margin-top: 32px;
+        margin-bottom: 16px;
+        font-size: 12px;
         order: 2;
+      }
+      @media(min-width:768px){
+        br{display: none;}
       }
     }
   }
@@ -107,7 +115,9 @@
   &--right{
     @media(max-width:767px){
       display: flex;
-      margin-top: 32px;
+      position: absolute;
+      bottom: 59px;
+      right: 16px;
       .screen-footer--item:not(:first-child){
         margin-top: 0px;
         margin-left: 16px;

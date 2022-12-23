@@ -5,7 +5,7 @@
       <div class="screen-industries--row">
         <div class="screen-industries--left">
           <h3>We’ve helped clients of all sizes and across multiple different industries</h3>
-          <button @click="$parent.quiz = true" class="btn">Check eligibility</button>
+          <button v-if="winWidth > 991" @click="$parent.quiz = true" class="btn">Check eligibility</button>
         </div>
         <div class="screen-industries--right">
           <div class="screen-industries--item">
@@ -34,9 +34,24 @@
           </div>
         </div>
       </div>
+      <button v-if="winWidth < 992" @click="$parent.quiz = true" class="btn">Check eligibility</button>
     </div>
   </div>
 </template>
+
+<script>
+export default{
+  data(){
+    return{
+      winWidth: 0
+    }
+  },
+  mounted(){
+    this.winWidth = window.innerWidth
+    window.addEventListener('resize', e => this.winWidth = window.innerWidth)
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .screen-industries{
@@ -48,8 +63,10 @@
     padding: 160px 0;
   }
   &--row{
+    margin-bottom: 30px;
     @media(min-width:768px){
       display: flex;
+      margin-bottom: 0;
     }
   }
   &--left{
@@ -109,13 +126,13 @@
     font-size: 20px;
     line-height: 130%;
     color: #797B87;
-    margin-bottom: 32px;
     @media(max-width:767px){
       br{display: none;}
     }
     @media(min-width:768px){
       font-size: 32px;
       max-width: 344px;
+      margin-bottom: 32px;
     }
   }
 }
