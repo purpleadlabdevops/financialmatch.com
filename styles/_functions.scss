@@ -1,0 +1,7 @@
+@function vw($px-vw, $base-vw: 1440px){
+  @return ($px-vw * 100vw) / $base-vw;
+}
+
+@function minus($param1, $param2) {
+  @return $param1 - $param2;
+}

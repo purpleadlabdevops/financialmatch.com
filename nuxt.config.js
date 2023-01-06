@@ -49,9 +49,9 @@ export default {
     ]
   },
   styleResources: {
-    scss: ['styles/_mixins.scss', 'styles/_vars.scss'],
+    scss: ['styles/_mixins.scss', 'styles/_vars.scss', 'style/_functions.scss'],
   },
-  css: ['@/styles/global'],
+  css: ['@/styles/global', '@/styles/screen'],
   components: true,
   modules: [
     '@nuxtjs/axios',

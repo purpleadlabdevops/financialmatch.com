@@ -1,3 +1,5 @@
+@import '_functions';
+
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
@@ -7,6 +9,7 @@
 .v-leave-to {
   opacity: 0;
 }
+
 .screen-wrap{
   background: #F4EFE5;
   @font-face {
@@ -205,6 +208,25 @@
     color: #0E0E11;
     & + h2{
       margin-top: 32px;
+    }
+  }
+}
+
+.screen-elastic{
+  .container{
+    width: 100% !important;
+    max-width: 100% !important;
+    @media(min-width:1400px){
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    @media(min-width:1600px){
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @media(min-width:2000px){
+      padding-left: 80px;
+      padding-right: 80px;
     }
   }
 }

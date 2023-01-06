@@ -10,11 +10,6 @@
 
 <script>
 export default {
-  name: 'screens-info',
-  head: {
-    css: ['@/assets/scss/screen'],
-  },
+  name: 'screens-info'
 }
 </script>
-
-<style lang="scss" src="@/assets/scss/screen.scss"></style>

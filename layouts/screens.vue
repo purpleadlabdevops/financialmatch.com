@@ -22,5 +22,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" src="@/assets/scss/screen.scss"></style>
