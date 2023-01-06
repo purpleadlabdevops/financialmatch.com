@@ -16,6 +16,12 @@ export default {
     script: [
       {
         ssr: false,
+        src: '/js/leadId.js',
+        body: true,
+        id: 'LeadiDscript'
+      },
+      {
+        ssr: false,
         defer: true,
         hid: 'everflow',
         src: 'https://www.f98mmtrk.com/scripts/sdk/everflow.js',
@@ -45,19 +51,30 @@ export default {
               }, 500);
             })
         }
-      }
+      },
     ]
   },
-  styleResources: {
-    scss: ['styles/_mixins.scss', 'styles/_vars.scss'],
-  },
-  css: ['@/styles/global'],
-  components: true,
-  modules: [
-    '@nuxtjs/axios',
-    'nuxt-sweetalert2',
-    '@nuxtjs/style-resources'
+  // styleResources: {
+  //   scss: ['styles/_mixins.scss', 'styles/_vars.scss', 'style/_functions.scss'],
+  // },
+  plugins: [
+    { src: '~/plugins/vue-tiny-slider.js', mode: 'client' },
+    { src: '~/plugins/mg-animation.client.js' },
   ],
+  css: ["~/assets/scss/global.scss", "~/assets/scss/animate.css", "~/assets/scss/tiny-slider.css"],
+  components: true,
+  router: {
+    base: '/',
+    mode: 'history',
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'error',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue'),
+      })
+    },
+  },
+  modules: ['@nuxtjs/axios', 'nuxt-sweetalert2', '@nuxtjs/style-resources'],
   env: {
     API: process.env.API,
     campid: process.env.campid,

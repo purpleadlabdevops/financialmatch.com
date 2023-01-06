@@ -1,33 +1,41 @@
 <template>
-  <main class="branding">
-    <BrandingHeader />
-    <BrandingBanner />
-    <BrandingAdvantages />
-    <BrandingService />
-    <BrandingIndustries />
-    <BrandingFillings />
-    <BrandingWorks />
-    <BrandingFaq />
-    <BrandingFooter />
-  </main>
+  <div>
+    <HomeBanner />
+    <HomeAboutus />
+    <HomePhilosophy />
+    <HomeService />
+    <HomeWhyus />
+    <HomeEstimate />
+    <HomeIndustries />
+    <HomeWorks />
+    <Owners />
+    <HomeReviews />
+    <Faq />
+  </div>
 </template>
+
 <script>
-export default{
-  layout: 'branding'
+export default {
+  data(){
+    return{
+      quiz: false,
+      sent: false
+    }
+  },
+  mounted(){
+    localStorage.lead_source = window.location.origin
+    localStorage.optinurl = window.location.href
+    if(this.$route.query.utm_source) localStorage.utm_source = this.$route.query.utm_source
+    if(this.$route.query.utm_medium) localStorage.utm_medium = this.$route.query.utm_medium
+    if(this.$route.query.utm_campaign) localStorage.utm_campaign = this.$route.query.utm_campaign
+    if(this.$route.query.c1) localStorage.c1 = this.$route.query.c1
+    if(this.$route.query.c2) localStorage.c2 = this.$route.query.c2
+    if(this.$route.query.c3) localStorage.c3 = this.$route.query.c3
+    if(this.$route.query.c4) localStorage.c4 = this.$route.query.c4
+    if(this.$route.query.sub1) localStorage.sub1 = this.$route.query.sub1
+    if(this.$route.query.sub2) localStorage.sub2 = this.$route.query.sub2
+    if(this.$route.query.sub3) localStorage.sub3 = this.$route.query.sub3
+    if(this.$route.query.sub4) localStorage.sub4 = this.$route.query.sub4
+  }
 }
 </script>
-<style lang="scss">
-.branding, .branding *{
-  font-family: 'Montserrat', sans-serif;
-  .container {
-    max-width: 1330px;
-    padding: 0 15px;
-    width: 100%;
-    margin: 0 auto;
-  }
-  h1, h2, h3, h4, h5, h6{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-</style>

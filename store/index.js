@@ -1,35 +1,25 @@
-export const state = () => ({
-  index: 0,
-  result: 0,
-  phone: '18558559365'
-})
+import Vuex from 'vuex';
 
-export const mutations = {
-  setIndex(state, index) {
-    state.index = index
-  },
-  setResult(state, result) {
-    state.result = result
-  },
-  setPhone(state, phone) {
-    state.phone = phone
-  }
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      thanks: false,
+      quiz: false
+    },
+    getters:{
+      getThanks: state => state.thanks,
+      getQuiz: state => state.quiz
+    },
+    mutations: {
+      setThanks(state, thanks) {
+        state.thanks = thanks
+      },
+      setQuiz(state, quiz) {
+        state.quiz = quiz
+      }
+    },
+    actions: {}
+  })
 }
 
-export const actions = {
-  getIndex({ commit }) {
-    commit('setIndex', index);
-  },
-  getResult({ commit }) {
-    commit('setResult', result);
-  },
-  getPhone({ commit }) {
-    commit('setPhone', phone);
-  }
-}
-
-export const getters = {
-  index: state => state.index,
-  result: state => state.result,
-  phone: state => state.phone
-}
+export default createStore

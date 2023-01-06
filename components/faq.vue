@@ -1,58 +1,73 @@
 <template>
-  <section class="faq">
-    <div class="faq__container">
-      <h3 class="faq__title">Frequently Asked Questions</h3>
-      <ul class="faq__nav">
-        <li><a href="#faq-qualification">Qualification</a></li>
-        <li><a href="#faq-tax-credit">Tax Credit</a></li>
-        <!--        <li><a href="#faq-our-company">Our Company</a></li>-->
-      </ul>
-      <!--    TAX    -->
-      <div id="faq-qualification" class="faq__group">
-        <h3 class="faq__group-title">Qualification</h3>
-        <div class="faq__block">
-          <blocks-faq v-for="(faq, i) in tax" :key="'tax_' + i">
-            <template #title>{{ faq.title }}</template>
-            <template #dscr>{{ faq.dscr }} </template>
-          </blocks-faq>
+  <div class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq--row">
+        <!-- <svg width="656" height="557" viewBox="0 0 656 557" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00264e-05 492.874L0 68.9191C0 61.5628 5.96347 55.5993 13.3198 55.5993H60.3071L249.471 471.455L344 446.098V0H642.68C650.036 0 656 5.96346 656 13.3198V352.185C656 358.212 651.953 363.488 646.131 365.05L344 446.098V557H288.383L249.471 471.455L121.668 505.739C120.543 506.041 119.382 506.194 118.217 506.194H13.3198C5.9635 506.194 2.03633e-05 500.23 2.00264e-05 492.874Z" fill="#1D3C86"/></svg> -->
+        <svg width="656" height="557" viewBox="0 0 656 557" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- <g clip-path="url(#clip0_213_2517)"> -->
+          <path d="M2.00264e-05 492.874L0 68.9191C0 61.5628 5.96347 55.5993 13.3198 55.5993H60.3071L249.471 471.455L344 446.098V0H642.68C650.036 0 656 5.96346 656 13.3198V352.185C656 358.212 651.953 363.488 646.131 365.05L344 446.098V557H288.383L249.471 471.455L121.668 505.739C120.543 506.041 119.382 506.194 118.217 506.194H13.3198C5.9635 506.194 2.03633e-05 500.23 2.00264e-05 492.874Z" fill="#1D3C86"/>
+          <rect
+            class="animate__animated"
+            data-anim="heightOut"
+            data-duration="400"
+            style="opacity: 1;"
+            y="55"
+            width="249.47"
+            height="452"
+            fill="#F4EFE5"/>
+          <rect
+            class="animate__animated"
+            data-anim="heightOut"
+            data-delay="390"
+            data-duration="300"
+            style="opacity: 1;"
+            x="249.4"
+            y="446"
+            width="94.6"
+            height="111"
+            fill="#F4EFE5"/>
+          <rect
+            class="animate__animated"
+            data-anim="heightOut"
+            data-delay="680"
+            data-duration="300"
+            style="opacity: 1;"
+            x="344"
+            width="312"
+            height="446.1"
+            fill="#F4EFE5"/>
+          <!-- </g> -->
+          <defs>
+            <clipPath id="clip0_213_2517">
+              <rect width="656" height="557" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+        <div class="faq--right">
+          <div class="faq--tabs">
+            <button class="active" @click="chooseFaq('tax', $event)">Qualification</button>
+            <button @click="chooseFaq('credit', $event)">Tax Credit</button>
+          </div>
+          <div class="faq--item" v-for="(item, index) in this[faq]" :key="`faq_${index}`" @click="openFaq">
+            <h4>{{ item.title }}</h4>
+            <div v-html="item.dscr"></div>
+          </div>
         </div>
       </div>
-      <!--    Tax Credit   -->
-      <div id="faq-tax-credit" class="faq__group">
-        <h3 class="faq__group-title">Tax Credit</h3>
-        <div class="faq__block">
-          <blocks-faq v-for="(faq, i) in credit" :key="'credit_' + i">
-            <template #title>{{ faq.title }}</template>
-            <template #dscr><div v-html="faq.dscr"></div></template>
-          </blocks-faq>
-        </div>
-      </div>
-
-      <!--    Our Company   -->
-      <!--      <div id="faq-our-company" class="faq__group">-->
-      <!--        <h3 class="faq__group-title">Our Company</h3>-->
-      <!--        <div class="faq__block">-->
-      <!--          <blocks-faq v-for="(faq, i) in company" :key="'company_' + i">-->
-      <!--            <template #title>{{ faq.title }}</template>-->
-      <!--            <template #dscr><div v-html="faq.dscr"></div></template>-->
-      <!--          </blocks-faq>-->
-      <!--        </div>-->
-      <!--      </div>-->
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'faq',
   data() {
     return {
+      faq: 'tax',
       tax: [
         {
           title: 'Can I qualify if I’m a 1099 contractor?',
-          dscr:
-            ' Unfortunately no. This program is only for companies who paid W2\n' +
-            '              wages to non-owners.',
+          dscr: 'Unfortunately no. This program is only for companies who paid W2 wages to non-owners.',
         },
         {
           title: 'Can I qualify if I don’t have any W2 employees?',
@@ -111,69 +126,140 @@ export default {
       ]
     }
   },
+  methods: {
+    chooseFaq(name, e){
+      this.faq = name
+      document.querySelectorAll('.faq--item').forEach(item => item.classList.remove('active'))
+      document.querySelector('button.active').classList.remove('active')
+      e.target.classList.add('active')
+    },
+    openFaq(e){
+      e.target.classList.toggle('active')
+    }
+  }
 }
 </script>
 
-<style lang="scss">
-.faq {
-  padding: 60px 0;
-  background: $global_bg_color_1;
-}
-.faq__container {
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 20px;
-}
-.faq__title {
-  text-align: center;
-  font-size: 30px;
-  color: $global_color_1;
-  font-weight: 600;
-}
-.faq__nav {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  @include xs {
-    flex-direction: column;
+<style lang="scss" scoped>
+.faq{
+  padding: 80px 0;
+  @media(min-width:992px){
+    padding: 160px 0;
   }
-
-  a {
-    font-size: 18px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-    background: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 0 5px 10px 5px;
-    color: #146c70;
-    transition: 0.2s ease all;
-    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
-    &:hover {
-      box-shadow: 4px 4px 10px rgb(0 0 0 / 10%);
-    }
-    @include xs {
-      display: block;
+  h2{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    color: #0E0E11;
+    margin-bottom: 32px;
+    @media(min-width:768px){
+      font-size: 56px;
     }
   }
-}
-.faq__group-title {
-  margin-bottom: 1rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
-  margin-top: 30px;
-  font-size: 28px;
-}
-.faq__block {
-  background: #fff;
-  padding: 25px;
-  box-shadow: 0 3px 25px rgb(0 0 0 / 10%);
-  border-radius: 20px;
+  &--row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media(max-width:767px){
+      flex-direction: column;
+    }
+  }
+  svg{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 4px;
+    @media(max-width:767px){
+      order: 2;
+    }
+    @media(min-width:768px){
+      width: calc(50% - 32px);
+      margin-top: 58px;
+    }
+  }
+  &--right{
+    width: 100%;
+    @media(min-width:768px){
+      width: 50%;
+    }
+  }
+  &--tabs{
+    margin-bottom: 32px;
+    button{
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140%;
+      color: #797B87;
+      padding: 0 8px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      &.active{
+        color: #1D3C86;
+        border-color: #1D3C86;
+      }
+      &:not(:first-child){
+        margin-left: 32px;
+      }
+    }
+  }
+  &--item{
+    padding: 24px 0px;
+    border-top: 2px solid #D5D4D4;
+    cursor: pointer;
+    *{
+      pointer-events: none;
+    }
+    h4{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 130%;
+      color: #0E0E11;
+      position: relative;
+      padding-right: 16px;
+      &:after{
+        content:"+";
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: #797B87;
+        transition: .5s ease;
+        position: absolute;
+        right: 0; top: 50%;
+        transform-origin: top center;
+        transform: rotate(0deg) translateY(-50%);
+      }
+    }
+    div{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #0E0E11;
+      transition: 1s ease;
+      max-height: 0px;
+      opacity: 0;
+      padding-right: 15px;
+    }
+    &:hover{
+      opacity: .7;
+      h4{
+        &:after{
+          transform: rotate(30deg) translateY(-50%);
+        }
+      }
+    }
+    &.active{
+      h4{
+        &:after{
+          transform: rotate(45deg) translateY(-50%) !important;
+        }
+      }
+      div{
+        max-height: 1000px;
+        padding-top: 8px;
+        opacity: 1;
+      }
+    }
+  }
 }
 </style>
