@@ -1,5 +1,8 @@
 @import '_fonts';
 @import '_reset';
+@import '_functions';
+@import '_tiny-slider';
+@import '_animate';
 
 :root {
   --text-white: #FAFAFA;
@@ -21,7 +24,7 @@
 html, body{
   line-height: 1.2;
   font-size: 14px;
-  background: #F4EFE5;
+  background: var(--bg-white);
   position: relative;
   min-height: 100vh;
 }
@@ -64,7 +67,7 @@ button, a, [type="submit"]{
   font-weight: 600;
   font-size: 16px;
   line-height: 140%;
-  color: #41A280;
+  color: var(--brand-green);
   background: none;
   border: none;
   text-align: center;
@@ -73,10 +76,10 @@ button, a, [type="submit"]{
     margin-right: 4px;
   }
   &-white{
-    color: #FAFAFA;
+    color: var(--text-white);
     svg{
       path{
-        fill: #FAFAFA;
+        fill: var(--text-white);
       }
     }
   }
@@ -86,10 +89,10 @@ button, a, [type="submit"]{
   display: block;
   font-weight: 600;
   font-size: 16px;
-  color: #FAFAFA;
+  color: var(--text-white);
   width: 100%;
   height: 51px;
-  background: #41A280;
+  background: var(--brand-green);
   border-radius: 8px;
   transition: background .5s ease, border .5s ease;
   border: 2px solid #41A280;
@@ -101,28 +104,28 @@ button, a, [type="submit"]{
     width: 186px;
   }
   &:hover{
-    background: #30785D;
-    border-color: #30785D;
+    background: var(--bg-green);
+    border-color: var(--bg-green);
   }
   &:active{
-    background: #41A280;
-    border-color: #0E0E11;
+    background: var(--brand-green);
+    border-color: var(--text-black);
   }
   &:disabled{
-    background: #41A280;
-    border-color: #41A280;
+    background: var(--brand-green);
+    border-color: var(--brand-green);
     opacity: 0.5;
     cursor: default;
     pointer-events: none;
   }
   &-white{
-    color: #41A280;
-    border-color: #41A280;
+    color: var(--brand-green);
+    border-color: var(--brand-green);
     background: #fff;
     &:hover{
       background: #fff;
-      border-color: #30785D;
-      color: #30785D;
+      border-color: var(--bg-green);
+      color: var(--bg-green);
     }
     &:active{
       background: #fff;
@@ -130,7 +133,7 @@ button, a, [type="submit"]{
     }
     &:disabled{
       background: #fff;
-      border-color: #41A280;
+      border-color: var(--brand-green);
     }
   }
 }
@@ -146,17 +149,17 @@ button, a, [type="submit"]{
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #0E0E11;
+    color: var(--text-black);
     padding: 4px 0;
     &[type="submit"]{
       padding: 16px 32px 13px;
       height: 51px;
-      background: #41A280;
+      background: var(--brand-green);
       border-radius: 8px;
       font-weight: 600;
       font-size: 16px;
       line-height: 140%;
-      color: #FAFAFA;
+      color: var(--text-white);
     }
   }
   &:not(:first-child){
@@ -170,7 +173,7 @@ button, a, [type="submit"]{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     @media(min-width:992px){
       font-size: 42px;
       position: absolute;
@@ -188,14 +191,14 @@ button, a, [type="submit"]{
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 8px;
   }
   p{
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #0E0E11;
+    color: var(--text-black);
     & + h2{
       margin-top: 32px;
     }

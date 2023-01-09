@@ -90,7 +90,7 @@ export default{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(min-width:992px){
       margin-bottom: 0;
 
@@ -110,7 +110,7 @@ export default{
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     left: 16px;
     width: 190px;
     bottom: 16px;
@@ -133,14 +133,14 @@ export default{
     font-weight: 600;
     padding-left: 0;
     padding-right: 0;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(max-width:991px){
       top: calc(100% + 32px);
-      background: #41A280;
+      background: var(--brand-green);
     }
     @media(min-width:992px){
       width: 186px;
-      color: #0E0E11;
+      color: var(--text-black);
       bottom: 32px;
       left: 36.48%;
     }

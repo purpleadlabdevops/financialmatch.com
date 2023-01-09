@@ -25,7 +25,7 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 32px;
     width: 100%;
     @media(min-width:768px){
@@ -37,7 +37,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 130%;
-    color: #797B87;
+    color: var(--bg-gray);
     border-top: 2px solid #D5D4D4;
     padding-top: 32px;
     @media(max-width:767px){
@@ -55,7 +55,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #0E0E11;
+    color: var(--text-black);
   }
   &--row{
     padding-top: 16px;

@@ -109,7 +109,7 @@ export default {
   h2{
     font-weight: 600;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     font-size: 32px;
     @media(max-width:991px){
       margin-bottom: 32px;
@@ -139,21 +139,21 @@ export default {
       font-weight: 400;
       font-size: 12px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       margin-bottom: 8px;
     }
     h3{
       font-weight: 600;
       font-size: 20px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       margin-bottom: 8px;
     }
     p{
       font-weight: 400;
       font-size: 16px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       margin-bottom: 16px;
     }
   }

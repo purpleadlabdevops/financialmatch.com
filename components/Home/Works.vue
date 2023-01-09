@@ -42,7 +42,7 @@
 
 <style lang="scss" scoped>
 .works{
-  background: #30785D;
+  background: var(--bg-green);
   padding: 80px 0;
   @media(min-width:992px){
     padding: 160px 0;
@@ -51,7 +51,7 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     margin-bottom: 32px;
     @media(min-width:768px){
       font-size: 56px;

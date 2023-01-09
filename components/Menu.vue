@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .menu{
-  background: #30785D;
+  background: var(--bg-green);
   position: fixed;
   left: 0;
   top: 0;
@@ -68,7 +68,7 @@ export default {
       font-weight: 600;
       font-size: 32px;
       line-height: 130%;
-      color: #FAFAFA;
+      color: var(--text-white);
       display: block;
       text-decoration: none;
       &:not(:first-child){
@@ -80,7 +80,7 @@ export default {
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     display: flex;
     justify-content: space-between;
     span{
@@ -88,7 +88,7 @@ export default {
       margin-bottom: 16px;
     }
     a{
-      color: #FAFAFA;
+      color: var(--text-white);
       text-decoration: underline;
       display: block;
       &:not(:first-child){

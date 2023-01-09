@@ -248,13 +248,13 @@ export default {
     padding: 50px;
   }
   .btn-white{
-    background: #F4EFE5;
+    background: var(--bg-white);
   }
   .link{
     margin: 40px auto 0;
   }
   &--inner{
-    background: #F4EFE5;
+    background: var(--bg-white);
     border-radius: 12px;
     min-height: calc(100vh - 100px);
     max-width: 1340px;
@@ -273,7 +273,7 @@ export default {
     font-size: 20px;
     line-height: 130%;
     text-align: center;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 16px;
     max-width: 638px;
     @media(min-width:768px){
@@ -290,7 +290,7 @@ export default {
       font-size: 16px;
       line-height: 140%;
       text-align: center;
-      color: #0E0E11;
+      color: var(--text-black);
       margin-bottom: 32px;
       width: 100%;
       @media(min-width:768px){
@@ -306,7 +306,7 @@ export default {
       font-weight: 600;
       font-size: 20px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       margin-bottom: 22px;
     }
     button{
@@ -328,7 +328,7 @@ export default {
     font-weight: 600;
     font-size: 16px;
     line-height: 140%;
-    color: #41A280;
+    color: var(--brand-green);
     position: absolute;
     top: 24px; left: 24px;
     background: none;
@@ -359,7 +359,7 @@ export default {
       font-weight: 400;
       font-size: 12px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       max-width: 332px;
       margin: 0 auto;
     }

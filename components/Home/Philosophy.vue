@@ -77,7 +77,7 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 8px;
     @media(max-width:767px){
       br{display: none;}
@@ -91,7 +91,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 130%;
-    color: #797B87;
+    color: var(--bg-gray);
     margin-bottom: 32px;
     @media(max-width:767px){
       br{display: none;}
@@ -104,7 +104,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-left: auto;
     width: calc(100% - 60px);
     margin-bottom: 40px;
@@ -121,7 +121,7 @@
     font-size: 16px;
     line-height: 140%;
     text-transform: capitalize;
-    color: #41A280;
+    color: var(--brand-green);
     text-decoration: none;
   }
   .container{

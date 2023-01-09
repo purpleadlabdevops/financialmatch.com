@@ -54,14 +54,14 @@ export default {
       },
     ]
   },
-  // styleResources: {
-  //   scss: ['styles/_mixins.scss', 'styles/_vars.scss', 'style/_functions.scss'],
-  // },
+  styleResources: {
+    scss: ['~/assets/scss/_functions.scss']
+  },
   plugins: [
     { src: '~/plugins/vue-tiny-slider.js', mode: 'client' },
     { src: '~/plugins/mg-animation.client.js' },
   ],
-  css: ["~/assets/scss/global.scss", "~/assets/scss/animate.css", "~/assets/scss/tiny-slider.css"],
+  css: ["~/assets/scss/global.scss"],
   components: true,
   router: {
     base: '/',

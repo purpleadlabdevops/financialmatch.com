@@ -43,7 +43,7 @@
 export default{
   data(){
     return{
-      winWidth: 0
+      winWidth: 1440
     }
   },
   mounted(){
@@ -85,7 +85,7 @@ export default{
     font-weight: 400;
     font-size: 20px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     display: flex;
     justify-content: space-between;
     height: 74px;
@@ -99,7 +99,7 @@ export default{
       font-size: 20px;
       line-height: 130%;
       text-align: right;
-      color: #797B87;
+      color: var(--bg-gray);
       @media(min-width:768px){
         font-size: 32px;
       }
@@ -109,7 +109,7 @@ export default{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 32px;
     @media(max-width:767px){
       br{display: none;}
@@ -122,7 +122,7 @@ export default{
     font-weight: 400;
     font-size: 20px;
     line-height: 130%;
-    color: #797B87;
+    color: var(--bg-gray);
     @media(max-width:767px){
       br{display: none;}
     }

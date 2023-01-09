@@ -160,7 +160,7 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 16px;
     @media(min-width:992px){
       font-size: 56px;
@@ -171,7 +171,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
   }
   &--box{
     position: relative;
@@ -186,7 +186,7 @@
       font-weight: 600;
       font-size: 16px;
       line-height: 130%;
-      color: #1D3C86;
+      color: var(--brand-blue);
       padding-top: 2px;
       margin-bottom: 16px;
       @media(min-width:992px){
@@ -211,7 +211,7 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 130%;
-      color: #1D3C86;
+      color: var(--brand-blue);
       @media(min-width:992px){
         font-size: 32px;
       }

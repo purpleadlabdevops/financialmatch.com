@@ -48,7 +48,7 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 32px;
     @media(min-width:768px){
       font-size: 56px;

@@ -37,7 +37,7 @@
 
 <style lang="scss" scoped>
 .footer{
-  background: #30785D;
+  background: var(--bg-green);
   padding: 40px 0;
   @media(min-width:768px){
     padding: 80px 0;
@@ -48,7 +48,7 @@
     margin-bottom: 32px;
     font-size: 32px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(min-width:768px){
       font-size: 56px;
     }
@@ -62,7 +62,7 @@
       font-size: 16px;
       line-height: 140%;
       text-decoration-line: underline;
-      color: #FAFAFA;
+      color: var(--text-white);
       @media(max-width:767px){
         display: block;
         font-size: 12px;
@@ -96,7 +96,7 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 140%;
-      color: #FAFAFA;
+      color: var(--text-white);
       @media(max-width:767px){
         margin-bottom: 16px;
         font-size: 12px;
@@ -141,7 +141,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     margin-bottom: 4px;
     @media(min-width:768px){
       font-size: 16px;
@@ -151,7 +151,7 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 130%;
-      color: #FAFAFA;
+      color: var(--text-white);
       display: block;
       text-decoration: none;
       @media(min-width:768px){

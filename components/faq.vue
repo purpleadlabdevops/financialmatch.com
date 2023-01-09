@@ -150,7 +150,7 @@ export default {
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 32px;
     @media(min-width:768px){
       font-size: 56px;
@@ -189,14 +189,14 @@ export default {
       font-weight: 400;
       font-size: 20px;
       line-height: 140%;
-      color: #797B87;
+      color: var(--bg-gray);
       padding: 0 8px;
       background: none;
       border: none;
       border-bottom: 2px solid transparent;
       &.active{
-        color: #1D3C86;
-        border-color: #1D3C86;
+        color: var(--brand-blue);
+        border-color: var(--brand-blue);
       }
       &:not(:first-child){
         margin-left: 32px;
@@ -214,7 +214,7 @@ export default {
       font-weight: 600;
       font-size: 20px;
       line-height: 130%;
-      color: #0E0E11;
+      color: var(--text-black);
       position: relative;
       padding-right: 16px;
       &:after{
@@ -222,7 +222,7 @@ export default {
         font-weight: 600;
         font-size: 20px;
         line-height: 130%;
-        color: #797B87;
+        color: var(--bg-gray);
         transition: .5s ease;
         position: absolute;
         right: 0; top: 50%;
@@ -234,7 +234,7 @@ export default {
       font-weight: 400;
       font-size: 16px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       transition: 1s ease;
       max-height: 0px;
       opacity: 0;

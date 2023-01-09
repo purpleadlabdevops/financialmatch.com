@@ -25,7 +25,7 @@
 
 <style lang="scss" scoped>
 .done{
-  background: #30785D;
+  background: var(--bg-green);
   padding: 80px 0;
   @media(min-width:992px){
     padding: 160px 0;
@@ -34,7 +34,7 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     padding-bottom: 40px;
     margin-bottom: 40px;
     border-bottom: 2px solid #41A280;
@@ -67,7 +67,7 @@
       font-weight: 600;
       font-size: 32px;
       line-height: 130%;
-      color: #41A280;
+      color: var(--brand-green);
       display: block;
       margin-bottom: 8px;
       @media(min-width:992px){
@@ -80,7 +80,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(min-width:992px){
       font-size: 32px;
     }
@@ -89,7 +89,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
   }
 }
 </style>

@@ -82,7 +82,7 @@
 export default{
   data(){
     return{
-      winWidth: 0,
+      winWidth: 1440,
       employees: 1
     }
   },
@@ -106,13 +106,13 @@ export default{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 24px;
     @media(min-width:992px){
       margin-bottom: 0;
       position: absolute;
       left: 32px; top: 32px;
-      color: #FAFAFA;
+      color: var(--text-white);
       width: 367px;
       font-size: 36px;
     }
@@ -127,7 +127,7 @@ export default{
     margin-top: 32px;
     border: none;
     &-white{
-      color: #0E0E11;
+      color: var(--text-black);
       font-weight: 600;
       width: 186px;
     }
@@ -157,9 +157,8 @@ export default{
       width: 230px;
     }
     @media(min-width:992px){
-      min-width: 340px;
+      min-width: 24.7%;
       bottom: 32px;
-      // left: 35%;
       left: 50%;
       font-size: 14px;
     }
@@ -168,11 +167,11 @@ export default{
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
-    @media(min-width:768px){
+    @media(min-width:992px){
       font-size: 16px;
     }
     span{
@@ -282,9 +281,12 @@ export default{
     font-weight: 600;
     font-size: 42px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     margin-top: 16px;
-    @media(min-width:768px){
+    @media(min-width:1992px){
+      font-size: 46px;
+    }
+    @media(min-width:1400px){
       font-size: 56px;
     }
     span{

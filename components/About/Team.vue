@@ -179,13 +179,13 @@ export default {
       font-weight: 600;
       font-size: 20px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       margin-right: 16px;
       @media(min-width:992px){
         margin-right: 32px;
       }
       &.active{
-        color: #41A280;
+        color: var(--brand-green);
         text-decoration: underline;
       }
     }
@@ -194,7 +194,7 @@ export default {
     overflow: hidden;
   }
   &-header{
-    background: #41A280;
+    background: var(--brand-green);
     padding: 8px;
     @media(min-width:992px){
       padding: 22px;
@@ -244,7 +244,7 @@ export default {
   h2{
     font-weight: 600;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 32px;
     font-size: 32px;
     @media(min-width:992px){
@@ -255,7 +255,7 @@ export default {
     font-weight: 600;
     font-size: 16px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(min-width:992px){
       font-size: 20px;
       margin-bottom: 8px;
@@ -265,7 +265,7 @@ export default {
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(min-width:992px){
       font-size: 16px;
     }

@@ -151,7 +151,7 @@ export default {
 <style lang="scss" scoped>
 .screen{
   width: 100%;
-  background: #F4EFE5;
+  background: var(--bg-white);
   z-index: 1;
   @media(min-width:992px){
     position: fixed;

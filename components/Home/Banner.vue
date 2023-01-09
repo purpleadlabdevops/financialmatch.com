@@ -37,8 +37,9 @@
             data-duration="400"
             style="opacity: 1;"
             width="987.27"
-            height="426.6"
+            height="542"
             fill="#F4EFE5" />
+            <!-- height="426.6" -->
           <rect
             class="animate__animated"
             data-anim="heightOut"
@@ -105,13 +106,13 @@ export default{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 24px;
     @media(min-width:992px){
       margin-bottom: 0;
       position: absolute;
       left: 32px; top: 32px;
-      color: #FAFAFA;
+      color: var(--text-white);
       width: 57.5%;
       font-size: 36px;
     }
@@ -127,7 +128,7 @@ export default{
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     left: 16px;
     width: 190px;
     @media(max-width:991px){
@@ -149,7 +150,7 @@ export default{
     position: absolute;
     left: 16px;
     bottom: 16px;
-    color: #0E0E11;
+    color: var(--text-black);
     font-weight: 600;
     width: 186px;
     padding-left: 0;

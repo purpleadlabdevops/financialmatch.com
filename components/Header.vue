@@ -25,7 +25,7 @@
 export default {
   data(){
     return{
-      winWidth: 1000,
+      winWidth: 1440,
       menu: false
     }
   },
@@ -79,7 +79,7 @@ export default {
       font-weight: 600;
       font-size: 16px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       display: block;
       text-decoration: none;
     }
@@ -88,7 +88,7 @@ export default {
     font-weight: 600;
     font-size: 16px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     text-decoration: none;
     @media(min-width:768px){
       font-size: 20px;

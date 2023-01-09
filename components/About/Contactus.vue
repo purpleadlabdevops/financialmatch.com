@@ -123,7 +123,7 @@ export default{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 16px;
     @media(min-width:992px){
       font-size: 56px;
@@ -168,7 +168,7 @@ export default{
       font-weight: 600;
       font-size: 20px;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       display: block;
       width: 100%;
       background: none;
@@ -198,10 +198,10 @@ export default{
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
-        color: #FAFAFA;
+        color: var(--text-white);
         padding: 16px 32px 13px;
         height: 51px;
-        background: #41A280;
+        background: var(--brand-green);
         border-radius: 8px;
         @media(min-width:992px){
           width: 186px;
@@ -215,7 +215,7 @@ export default{
     label{
       font-weight: 400;
       line-height: 140%;
-      color: #0E0E11;
+      color: var(--text-black);
       position: absolute;
       left: 0;
       transition: .2s ease;

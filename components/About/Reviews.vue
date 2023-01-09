@@ -127,7 +127,7 @@
 export default {
   data(){
     return{
-      winWidth: 0
+      winWidth: 1440
     }
   },
   mounted(){
@@ -164,7 +164,7 @@ export default {
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     @media(min-width:768px){
       font-size: 56px;
     }
@@ -176,7 +176,7 @@ export default {
     font-size: 16px;
     line-height: 140%;
     text-transform: capitalize;
-    color: #DC5750;
+    color: var(--brand-red);
     padding: 0;
     @media(max-width:992px){
       margin-left: auto;
@@ -213,7 +213,7 @@ export default {
   &--item{
     width: 100%;
     max-width: calc(100% - 8px);
-    background: #DC5750;
+    background: var(--brand-red);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -255,7 +255,7 @@ export default {
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #0E0E11;
+    color: var(--text-black);
     @media(max-width:991px){
       border-radius: 10px;
     }
@@ -268,7 +268,7 @@ export default {
     width: 100%;
     padding: 16px;
     @media(max-width:991px){
-      background: #DC5750;
+      background: var(--brand-red);
       border-radius: 0px 0px 10px 10px;
       margin-top: -8px;
       display: flex;
@@ -281,36 +281,36 @@ export default {
     }
   }
   &--blue{
-    background: #1D3C86;
+    background: var(--brand-blue);
   }
   h3{
     font-weight: 600;
     font-size: 20px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(max-width:991px){
       position: absolute;
       top: 0; left: 0;
-      color: #0E0E11;
+      color: var(--text-black);
     }
   }
   h4{
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     margin-bottom: 23px;
     @media(max-width:991px){
       position: absolute;
       top: 22px; left: 0;
-      color: #0E0E11;
+      color: var(--text-black);
     }
   }
   h5{
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     @media(min-width:992px){
       font-size: 16px;
     }

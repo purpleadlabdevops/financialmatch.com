@@ -30,8 +30,6 @@
         </div>
 
         <svg v-if="winWidth > 991" width="1376" height="347" viewBox="0 0 1376 347" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- <g clip-path="url(#clip0_212_2512)"> -->
-          <!-- <rect width="1376" height="347" fill="white"/> -->
           <path d="M0 337V10C0 4.47715 4.47715 0 10 0H1033.5L1203.33 253.028L1297.11 201.133V46.6036H1366C1371.52 46.6036 1376 51.0807 1376 56.6036V145.688C1376 152.963 1372.05 159.665 1365.68 163.187L1297.11 201.133V298.703C1297.11 304.226 1292.63 308.703 1287.11 308.703H1246.03C1242.69 308.703 1239.58 307.043 1237.72 304.276L1203.33 253.028L1038.02 344.5C1035.05 346.14 1031.72 347 1028.34 347H10C4.47715 347 0 342.523 0 337Z" fill="#DC5750"/>
           <rect
             class="animate__animated"
@@ -63,7 +61,6 @@
             width="79"
             height="154.55"
             fill="#F4EFE5"/>
-        <!-- </g> -->
           <defs>
             <clipPath id="clip0_212_2512">
               <rect width="1376" height="347" fill="white"/>
@@ -82,7 +79,7 @@
 export default{
   data(){
     return{
-      winWidth: 0,
+      winWidth: 1440,
       employees: 1
     }
   },
@@ -106,13 +103,13 @@ export default{
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
-    color: #0E0E11;
+    color: var(--text-black);
     margin-bottom: 24px;
     @media(min-width:992px){
       margin-bottom: 0;
       position: absolute;
       left: 32px; top: 32px;
-      color: #FAFAFA;
+      color: var(--text-white);
       width: 367px;
       font-size: 36px;
     }
@@ -127,7 +124,7 @@ export default{
     margin-top: 32px;
     border: none;
     &-white{
-      color: #0E0E11;
+      color: var(--text-black);
       font-weight: 600;
       width: 186px;
     }
@@ -157,9 +154,8 @@ export default{
       width: 230px;
     }
     @media(min-width:992px){
-      min-width: 340px;
+      min-width: 24.7%;
       bottom: 32px;
-      // left: 35%;
       left: 50%;
       font-size: 14px;
     }
@@ -168,7 +164,7 @@ export default{
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: #FAFAFA;
+    color: var(--text-white);
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
@@ -261,7 +257,6 @@ export default{
     border-radius: 30px;
     cursor: pointer;
     margin-top: 0px;
-    /*Needed to keep the Edge thumb centred*/
   }
   input[type=range]:focus::-ms-fill-lower {
     background: #d5d4d4;
@@ -269,22 +264,21 @@ export default{
   input[type=range]:focus::-ms-fill-upper {
     background: #d8d7d7;
   }
-  /*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
-  how to remove the virtical space around the range input in IE*/
   @supports (-ms-ime-align:auto) {
-    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
     input[type=range] {
       margin: 0;
-      /*Edge starts the margin from the thumb, not the track as other browsers do*/
     }
   }
   &--money{
     font-weight: 600;
     font-size: 42px;
     line-height: 130%;
-    color: #FAFAFA;
+    color: var(--text-white);
     margin-top: 16px;
-    @media(min-width:768px){
+    @media(min-width:1992px){
+      font-size: 46px;
+    }
+    @media(min-width:1400px){
       font-size: 56px;
     }
     span{
